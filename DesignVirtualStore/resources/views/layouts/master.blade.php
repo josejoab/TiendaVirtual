@@ -44,6 +44,7 @@
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
             </div>
         </header>
+        @yield('content')
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
