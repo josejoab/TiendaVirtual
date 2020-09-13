@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Design extends Model
 {
     //Atributtes id, name, price, description, image, width, length, category_id
-    protected $fillable = ['name','price','description','image','width','length'];
+    protected $fillable = ['name','price','description','image','width','length','category_id'];
 
     public function getId()
     {
