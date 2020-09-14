@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'UserController@index')->name('user');
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/chat', 'ChatController@index')->name('chat');
 
 Route::get('/prueba/designs', 'DesignController@show')->name('designs.show');
 Route::get('/prueba/designs{id}', 'DesignController@showDesign')->name('design.showOne');
