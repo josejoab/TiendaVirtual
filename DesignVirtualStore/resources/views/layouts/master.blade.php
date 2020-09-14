@@ -9,6 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
+    <!-- Chat Styles -->
+    @livewireStyles
+    @livewireScripts
+    
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -63,7 +67,7 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-down" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -345,6 +349,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset('/fashi/js/jquery.slicknav.js')}}"></script>
     <script src="{{ asset('/fashi/js/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('/fashi/js/main.js')}}"></script>
+
+
+    @yield('chat')
 </body>
 
 </html>
