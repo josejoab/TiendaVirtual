@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\DesingOrder;
 
 class Order extends Model
 {
@@ -66,5 +67,8 @@ class Order extends Model
         ]);
     }
 
+    public function desingOrder(){
+        return $this->hasMany(DesingOrder::class);
+    }
 
 }

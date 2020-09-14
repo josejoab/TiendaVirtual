@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Order;
+use App\Design;
 
 class DesignOrder extends Model
 {
@@ -76,5 +78,11 @@ class DesignOrder extends Model
         ]);
     }
 
+    public function order(){
+        return $this->belongsTo(Order::class);
+    }
 
+    public function design(){
+        return $this->belongsTo(Design::class);
+    }
 }

@@ -1,0 +1,2 @@
+Comandos necesarios en ese orden 2:
+composer require intervention/image
