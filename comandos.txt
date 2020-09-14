@@ -2,6 +2,7 @@ Valeria comandos necesarios en ese orden:
 php artisan key:generate
 php artisan config:clear
 php artisan config:cache
+composer require fzaninotto/faker  
 php artisan migrate
 composer dump-autoload
 php artisan db:seed
