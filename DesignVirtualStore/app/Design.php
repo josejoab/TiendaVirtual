@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\DesingOrder;
 
 class Design extends Model
 {
@@ -30,6 +31,18 @@ class Design extends Model
     public function setName($name)
     {
         $this->attributes['name'] = $name;
+    }
+
+
+    public function getPrice()
+    {
+        return $this->attributes['price'];
+    }
+
+
+    public function setPrice($price)
+    {
+        $this->attributes['price'] = $price;
     }
 
 
@@ -102,6 +115,11 @@ class Design extends Model
             "width" => "required|gt:0",
             "length" => "required|gt:0"
         ]);
+    }
+
+
+    public function desingOrder(){
+        return $this->hasMany(DesingOrder::class);
     }
 
 

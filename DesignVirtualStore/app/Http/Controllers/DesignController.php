@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Image;
 use App\Design;
 
 class DesignController extends Controller
@@ -13,17 +14,25 @@ class DesignController extends Controller
         $data = []; //to be sent to the view
         $data["title"] = "Agregar Diseño";
 
-        return view('')->with("data",$data);
+        return view('design.create')->with("data",$data);
     }
 
 
     public function save(Request $request)
     {
         Design::validate($request);
-        $request = saveImage();
-        Design::create($request->only(["name","price","description","image","width","length","category_id"]));  
+        $image = self::saveImage($request);
+        Design::create([
+            "name" => $request->name,
+            "price" => $request->price,
+            "description" => $request->description,
+            "image" => $image,
+            "width" => $request->width, 
+            "length" =>$request->length, 
+            "category_id" =>$request->category_id, 
+            ]); 
         
-        return back()->with('success','Item created successfully!');
+        return back();
     }
 
 
@@ -38,9 +47,9 @@ class DesignController extends Controller
             $constraint->aspectRatio();
         });
         $red->save($destiny.'/thumbs/'.$name);
-        $request->image = name;
+        $request->image = $name;
         
-        return $request;
+        return $name;
     }
 
 
@@ -51,7 +60,7 @@ class DesignController extends Controller
         $designs =  Design::all();
         $data["designs"] = $designs;
 
-        return view('')->with("data",$data);
+        return view('design.show')->with("data",$data);
     }
 
 
@@ -64,12 +73,23 @@ class DesignController extends Controller
             $data["title"] = "Diseño ".$design->name;
             $data["design"] = $design;
 
-            return view('')->with("data",$data);
+            return view('design.showDesign')->with("data",$data);
         }
         catch(ModelNotFoundException $e)
         {
-            return view('')->with("data",$data);
+            return redirect()->route('design.show');
         }
+    }
+
+
+    public function edit($id)
+    {
+        $data = []; //to be sent to the view
+        $design = Design::findOrFail($id);
+        $data["title"] = "Editar Diseño";
+        $data["design"] = $design;
+
+        return view('design.edit')->with("data",$data);
     }
 
 
@@ -77,14 +97,23 @@ class DesignController extends Controller
     {
         try
         {
+            Design::validate($request);
             $design = Design::findOrFail($id);
-            $design->update($request->all());
+            $image = self::saveImage($request);
+            $design->name = $request->name;
+            $design->price = $request->price;
+            $design->description = $request->description;
+            $design->image = $image;
+            $design->width = $request->width;
+            $design->length = $request->length;
+            $design->category_id = $request->category_id;
+            $design->save();
 
-            return redirect()->route('');
+            return redirect()->route('design.show');
         }
         catch(ModelNotFoundException $e)
         {
-            return redirect()->route('');
+            return redirect()->route('design.show');
         }
     }
 
@@ -93,8 +122,8 @@ class DesignController extends Controller
     {
         $design->delete();
 
-        return redirect()->route('');
+        return redirect()->route('design.show');
     }
 
-    
+
 }
