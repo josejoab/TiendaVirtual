@@ -1,5 +1,7 @@
 <?php
-
+/**
+    *Autor: Valeria Suárez
+*/
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\User;
@@ -25,7 +27,7 @@ $factory->define(User::class, function (Faker $faker) {
         'username' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password' => 'password', // password
+        'password' => $faker->password,
         'remember_token' => Str::random(10),
     ];
 });
