@@ -23,7 +23,7 @@ class CategoryController extends Controller
         Category::validate($request);
         Category::create($request->only(["name","description"]));  
         
-        return back()->with('success','Item created successfully!');
+        return back();
     }
 
 

@@ -9,21 +9,20 @@
         <tr>
             <th> Id </th>
             <th> Nombre </th>
-            <th> Categoria </th>
             <th> Precio </th>
+            <th> Categoria </th>
+            <th> &nbsp; </th>
+
         </tr>
     </thead>
     <tbody>
         @foreach ($data["designs"] as $design)
             <tr>
-                @if($loop->index<2)
-                    <td><div class="card-bold"><a href="{{ route('design.showDesign', ['id'=>$design->id]) }}"> {{ $design->id }} </a></div></td>
-                @else
-                <td><a href="{{ route('design.showDesign', ['id'=>$design->id]) }}"> {{ $design->id }} </a></td>
-                @endif
+                <td><div class="card-bold"><a href="{{ route('design.showDesign', ['id'=>$design->id]) }}"> {{ $design->id }} </a></div></td>
                 <td> {{ $design->name }} </td>
-                <td> {{ $design->category }} </td>
                 <td> {{ $design->price }} </td>
+                <td> {{ $design->category_id }} </td>
+                <td><div class="card-bold"><a href="{{ route('design.edit', ['id'=>$design->id]) }}"> Editar </a></div></td>
             </tr>
         @endforeach
     </tbody>
