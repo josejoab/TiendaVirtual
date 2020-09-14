@@ -6,6 +6,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
+      @include('util.message')
       <div class="card">
         <div class="card-header"> Añadir diseño </div>
           <div class="card-body">
@@ -22,10 +23,10 @@
                 <input type="text" placeholder="Nombre" name="name" value="{{ old('name') }}" />
                 <input type="number" placeholder="Precio" name="price" value="{{ old('price') }}" />
                 <input type="text" placeholder="Descripción" name="description" value="{{ old('description') }}" />
+                <input type="file" placeholder="image" name="img"/>
                 <input type="number" placeholder="Ancho" name="width" value="{{ old('width') }}" />
                 <input type="number" placeholder="Largo" name="length" value="{{ old('length') }}" />
-                <input type="text" placeholder="Categoria" name="category_id" value="{{ old('category_id') }}" />
-                <input type="file" placeholder="image" name="image"/>
+                <input type="text" placeholder="Categoria" name="category" value="{{ old('category') }}" />
                 <input type="submit" value="Send" />
             </form>
 

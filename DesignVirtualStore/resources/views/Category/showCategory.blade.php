@@ -16,7 +16,7 @@
                 <li class="list-group-item"><b>Categoria: </b>{{ $data["design"]['id_category'] }}</li>
                 <li class="list-group-item"><b>Precio: </b>{{ $data["design"]['price'] }}</li>
                 <li class="list-group-item"><b>Descripcion: </b>{{ $data["design"]['description'] }}</li>
-                <li><img src="{{ asset('/img/designs/thumbs/'.$data["design"]->image ) }}" alt="" width="200"></li>
+                <li><img src="{{ asset('/img/designs/thumbs/'.$data["design"]['image'] ) }}" alt="" width="200"></li>
                 <li>
                     <form method="POST" action="{{ route('design.destroy', $data["design"]) }}">
                         @csrf
