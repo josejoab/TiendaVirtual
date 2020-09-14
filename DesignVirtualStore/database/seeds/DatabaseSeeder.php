@@ -1,5 +1,7 @@
 <?php
-
+/**
+    *Autor: Valeria Suárez
+*/
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

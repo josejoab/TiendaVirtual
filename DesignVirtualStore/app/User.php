@@ -1,5 +1,7 @@
 <?php
-
+/**
+    *Autor: Valeria Suárez
+*/
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;

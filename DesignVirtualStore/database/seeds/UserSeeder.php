@@ -1,5 +1,7 @@
 <?php
-
+/**
+    *Autor: Valeria Suárez
+*/
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -32,5 +34,7 @@ class UserSeeder extends Seeder
             'email' => 'vsuarezm@eafit.edu.co',
             'password' => bcrypt('zftUYR85'),
         ]);
+
+        factory(App\User::class, 20)->create();
     }
 }

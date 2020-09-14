@@ -1,5 +1,7 @@
 <?php
-
+/**
+    *Autor: Valeria Suárez
+*/
 namespace App\Http\Livewire;
 
 use Livewire\Component;
