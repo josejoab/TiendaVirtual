@@ -25,10 +25,6 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
 
     <!-- Header Section Begin -->
     <header class="header-section">
@@ -46,6 +42,7 @@
                 </div>
                 <div class="ht-right">
                     <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="/register" class="login-panel"><i class="fa fa-user"></i>Register</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="{{ asset('/fashi/img/flag-1.jpg') }}" data-imagecss="flag yt"
