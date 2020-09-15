@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use App\DesingOrder;
 
 class Category extends Model
 {
@@ -50,6 +51,11 @@ class Category extends Model
             "name" => "required",
             "description" => "required"
         ]);
+    }
+
+
+    public function designs(){
+        return $this->hasMany(Design::class);
     }
 
 

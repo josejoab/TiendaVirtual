@@ -73,7 +73,7 @@ class DesignController extends Controller
             $data["title"] = "Diseño ".$design->name;
             $data["design"] = $design;
 
-            return view('design.showDesign')->with("data",$data);
+            return view('design.showDesign2')->with("data",$data);
         }
         catch(ModelNotFoundException $e)
         {
@@ -89,6 +89,7 @@ class DesignController extends Controller
         $data["title"] = "Editar Diseño";
         $data["design"] = $design;
 
+        
         return view('design.edit')->with("data",$data);
     }
 
@@ -109,7 +110,7 @@ class DesignController extends Controller
             $design->category_id = $request->category_id;
             $design->save();
 
-            return redirect()->route('design.show');
+            return redirect()->route('design.showDesign', $id);
         }
         catch(ModelNotFoundException $e)
         {
