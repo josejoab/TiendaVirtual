@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Order;
+use App\DesignOrder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -19,10 +19,11 @@ use Illuminate\Support\Str;
 /**
     *Autor: Joab Romero
 */
-$factory->define(Order::class, function (Faker $faker) {
+$factory->define(DesignOrder::class, function (Faker $faker) {
     return [
-        'paymentType' => $faker->creditCardType,
-        'totalPrice' => $faker->numberBetween($min = 200, $max = 900000),
-        'userId'=>$faker->numberBetween($min = 1, $max = 22)
+        'quantity' => $faker->numberBetween($min = 1, $max = 100),
+        'subTotalPrice' => $faker->numberBetween($min = 200, $max = 9000),
+        'orderId'=>$faker->numberBetween($min = 1, $max = 100),
+        'designId'=>$faker->numberBetween($min = 1, $max = 10)
     ];
 });

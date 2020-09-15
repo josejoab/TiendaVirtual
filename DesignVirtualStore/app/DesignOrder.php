@@ -5,7 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Order;
 use App\Design;
-//autor: José Joab Romero Humba
+/**
+    *Autor: Joab Romero
+*/
 class DesignOrder extends Model
 {
     //Atributtes id, quantity, subTotalPrice, orderId, designId
