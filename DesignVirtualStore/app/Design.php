@@ -1,4 +1,7 @@
 <?php
+/**
+    *Autor: Kevin Herrera
+*/
 
 namespace App;
 
@@ -96,13 +99,13 @@ class Design extends Model
 
     public function getCategoryId()
     {
-        return $this->attributes['categoryId'];
+        return $this->attributes['category_id'];
     }
 
 
     public function setCategotyId($cId)
     {
-        $this->attributes['categoryId'] = $cId;
+        $this->attributes['category_id'] = $cId;
     }
 
 
