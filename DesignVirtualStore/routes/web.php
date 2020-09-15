@@ -2,6 +2,7 @@
 /**
     *Autor: Valeria Suárez
     *Autor: Kevin Herrera
+    *Autor: Joab Romero
 */
 
 use Illuminate\Support\Facades\Route;
@@ -29,9 +30,7 @@ Route::get('/user', 'UserController@index')->name('user');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/chat', 'ChatController@index')->name('chat');
 
-Route::get('/prueba/designs', 'DesignController@show')->name('designs.show');
-Route::get('/prueba/designs{id}', 'DesignController@showDesign')->name('design.showOne');
-
+//cart
 Route::post('/design/add-to-cart/{id}', 'CartController@addToCart')->name('cart.addToCart');
 Route::get('/cart/remove', 'CartController@removeCart')->name("cart.removeCart");
 Route::get('/cart/cart', 'CartController@cart')->name("cart.cart");

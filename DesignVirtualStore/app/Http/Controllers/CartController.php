@@ -10,7 +10,10 @@ use App\DesignOrder;
 use App\User;
 use App\Http\Controllers\Auth;
 
-//autor: José Joab Romero Humba
+/**
+    *Autor: Joab Romero
+*/
+
 class CartController extends Controller
 {
     public function __construct()
@@ -59,7 +62,7 @@ class CartController extends Controller
             return view('cart.cart2')->with("data",$data);
         }
 
-        return redirect()->route('designs.show');
+        return redirect()->route('design.show');
     }
 
     public function buy(Request $request)
@@ -67,7 +70,7 @@ class CartController extends Controller
         $order = new Order();
         $order->setUserId(Auth()->user()->id);
         $order->setTotalPrice("0");
-        $order->setPaymentType("billullo");
+        $order->setPaymentType("No Especifica");
         $order->save();
 
         $precioTotal = 0;

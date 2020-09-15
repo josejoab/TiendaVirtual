@@ -2,6 +2,7 @@
 /**
     *Autor: Valeria Suárez
     *Autor: Kevin Herrera
+    *Autor: Joab Romero
 */
 use Illuminate\Database\Seeder;
 
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(DesignSeeder::class);
-
+        $this->call(OrderSeeder::class);
+        $this->call(DesignOrderSeeder::class);
     }
 }
