@@ -1,10 +1,13 @@
 <?php
+/**
+    *Autor: Kevin Herrera
+*/
 
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\DesingOrder;
+use App\Desing;
 
 class Category extends Model
 {
@@ -33,6 +36,7 @@ class Category extends Model
     {
         $this->attributes['name'] = $name;
     }
+
 
     public function getDescription()
     {
