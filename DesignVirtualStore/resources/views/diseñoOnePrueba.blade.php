@@ -17,7 +17,7 @@
             <!-- CARRITO FORM-->
             <div>
                 <form action="{{ route('cart.addToCart',['id'=> $data['design']->getId()]) }}" method="POST">
-                     @csrf
+                    @csrf
                     <div class="form-row">
                         <div class="col-md-12">Qtt: 
                             <input type="number" class="form-control" name="quantity" min="0" style="width: 80px;">
