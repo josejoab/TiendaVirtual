@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-text product-more">
-                    <a href="./home.html"><i class="fa fa-home"></i> Inicio </a>
-                    <a href="./shop.html"> Tienda </a>
+                    <a href="{{ route('index') }}"><i class="fa fa-home"></i> Inicio </a>
+                    <a href="#"> Tienda </a>
                     <span> Detalles </span>
                 </div>
             </div>
@@ -26,48 +26,48 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="filter-widget">
-                    <h4 class="fw-title">Categories</h4>
+                    <h4 class="fw-title">Categorías</h4>
                     <ul class="filter-catagories">
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Kids</a></li>
+                        @foreach($data["categories"] as $category)
+                        <li><a href="#"> {{ $category->name }} </a></li>
+                        @endforeach            
                     </ul>
                 </div>
                 <div class="filter-widget">
-                    <h4 class="fw-title">Brand</h4>
+                    <h4 class="fw-title"> &nbsp; </h4>
                     <div class="fw-brand-check">
                         <div class="bc-item">
-                            <label for="bc-calvin">
-                                Calvin Klein
-                                <input type="checkbox" id="bc-calvin">
+                            <label for="bc-1">
+                                &nbsp;
+                                <input type="checkbox" id="bc-1">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="bc-item">
-                            <label for="bc-diesel">
-                                Diesel
-                                <input type="checkbox" id="bc-diesel">
+                            <label for="bc-2">
+                                &nbsp;
+                                <input type="checkbox" id="bc-2">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="bc-item">
-                            <label for="bc-polo">
-                                Polo
-                                <input type="checkbox" id="bc-polo">
+                            <label for="bc-3">
+                                &nbsp;
+                                <input type="checkbox" id="bc-3">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="bc-item">
-                            <label for="bc-tommy">
-                                Tommy Hilfiger
-                                <input type="checkbox" id="bc-tommy">
+                            <label for="bc-4">
+                                &nbsp;
+                                <input type="checkbox" id="bc-4">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="filter-widget">
-                    <h4 class="fw-title">Price</h4>
+                    <h4 class="fw-title"> precio </h4>
                     <div class="filter-range-wrap">
                         <div class="range-slider">
                             <div class="price-input">
@@ -81,7 +81,7 @@
                             <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                         </div>
                     </div>
-                    <a href="#" class="filter-btn">Filter</a>
+                    <a href="#" class="filter-btn"> Filtrar </a>
                 </div>
                 <div class="filter-widget">
                     <h4 class="fw-title">Color</h4>
@@ -150,7 +150,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="product-pic-zoom">
-                            <img class="product-big-img" src={{ asset('/img/designs/'.$data["design"]->image ) }} alt="">
+                            <img class="product-big-img" src="{{ asset('/img/designs/'.$data["design"]->image ) }}" alt="">
                             <div class="zoom-icon">
                                 <i class="fa fa-search-plus"></i>
                             </div>
@@ -167,7 +167,7 @@
                     <div class="col-lg-6">
                         <div class="product-details">
                             <div class="pd-title">
-                                <span>oranges</span>
+                                <span> oranges </span>
                                 <h3> {{ $data["design"]['name'] }} </h3>
                                 <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                             </div>
@@ -181,10 +181,10 @@
                             </div>
                             <div class="pd-desc">
                                 <p> {{ $data["design"]['description'] }} </p>
-                                <h4>$495.00 <span>629.99</span></h4>
+                                <h4> {{ $data["design"]['price'] }} <span>{{ $data["design"]['price'] }}</span></h4>
                             </div>
                             <div class="pd-color">
-                                <h6>Color</h6>
+                                <h6> Color </h6>
                                 <div class="pd-color-choose">
                                     <div class="cc-item">
                                         <input type="radio" id="cc-black">
@@ -222,10 +222,10 @@
                                 <div class="pro-qty">
                                     <input type="text" value="1">
                                 </div>
-                                <a href="#" class="primary-btn pd-cart">Add To Cart</a>
+                                <a href="#" class="primary-btn pd-cart"> Agregar al carrito </a>
                             </div>
                             <ul class="pd-tags">
-                                <li><span>CATEGORIES</span>: More Accessories, Wallets & Cases</li>
+                                <li><span> CATEGORÍAS </span> : {{ $data["design"]['category_id'] }} </li>
                                 <li><span>TAGS</span>: Clothing, T-shirt, Woman</li>
                             </ul>
                             <div class="pd-share">
@@ -260,14 +260,12 @@
                                     <div class="row">
                                         <div class="col-lg-7">
                                             <h5>Introduction</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                                ex ea commodo consequat. Duis aute irure dolor in </p>
+                                            <p> {{ $data["design"]['description'] }} </p>
                                             <h5>Features</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                                ex ea commodo consequat. Duis aute irure dolor in </p>
+                                            <p> {{ $data["design"]['description'] }} </p>
                                         </div>
                                         <div class="col-lg-5">
-                                            <img src="img/product-single/tab-desc.jpg" alt="">
+                                            <img src="{{ asset('/img/designs/'.$data["design"]->image ) }}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -289,9 +287,9 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory">Price</td>
+                                            <td class="p-catagory"> Precio </td>
                                             <td>
-                                                <div class="p-price">$495.00</div>
+                                                <div class="p-price"> {{ $data["design"]['price'] }} </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -307,9 +305,9 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory">Weight</td>
+                                            <td class="p-catagory"> Ancho </td>
                                             <td>
-                                                <div class="p-weight">1,3kg</div>
+                                                <div class="p-weight"> {{ $data["design"]['width'] }} </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -420,10 +418,10 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="product-item">
                     <div class="pi-pic">
-                        <img src="img/products/women-1.jpg" alt="">
+                        <img src="{{ asset('/img/designs/'.$data["design"]->image ) }}  " alt="">
                         <div class="sale">Sale</div>
                         <div class="icon">
-                            <i class="icon_heart_alt"></i>
+                            <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                         </div>
                         <ul>
                             <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
@@ -439,78 +437,6 @@
                         <div class="product-price">
                             $14.00
                             <span>$35.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <img src="img/products/women-2.jpg" alt="">
-                        <div class="icon">
-                            <i class="icon_heart_alt"></i>
-                        </div>
-                        <ul>
-                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                            <li class="quick-view"><a href="#">+ Quick View</a></li>
-                            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pi-text">
-                        <div class="catagory-name">Shoes</div>
-                        <a href="#">
-                            <h5>Guangzhou sweater</h5>
-                        </a>
-                        <div class="product-price">
-                            $13.00
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <img src="img/products/women-3.jpg" alt="">
-                        <div class="icon">
-                            <i class="icon_heart_alt"></i>
-                        </div>
-                        <ul>
-                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                            <li class="quick-view"><a href="#">+ Quick View</a></li>
-                            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pi-text">
-                        <div class="catagory-name">Towel</div>
-                        <a href="#">
-                            <h5>Pure Pineapple</h5>
-                        </a>
-                        <div class="product-price">
-                            $34.00
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="product-item">
-                    <div class="pi-pic">
-                        <img src="img/products/women-4.jpg" alt="">
-                        <div class="icon">
-                            <i class="icon_heart_alt"></i>
-                        </div>
-                        <ul>
-                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                            <li class="quick-view"><a href="#">+ Quick View</a></li>
-                            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="pi-text">
-                        <div class="catagory-name">Towel</div>
-                        <a href="#">
-                            <h5>Converse Shoes</h5>
-                        </a>
-                        <div class="product-price">
-                            $34.00
                         </div>
                     </div>
                 </div>
