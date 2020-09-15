@@ -1,3 +1,5 @@
+<!-- Autor: Valeria Suárez -->
+
 @extends('layouts.master')
 
 @section('content')

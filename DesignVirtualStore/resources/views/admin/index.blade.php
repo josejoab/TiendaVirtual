@@ -1,4 +1,7 @@
-@extends('layouts.app')
+
+<!-- Autor: Valeria Suárez -->
+
+@extends('layouts.master')
 
 @section('content')
 <div class="container">

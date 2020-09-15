@@ -1,2 +1,13 @@
-Comandos necesarios en ese orden 2:
+Valeria comandos necesarios en ese orden:
+php artisan key:generate
+php artisan config:clear
+php artisan config:cache
+composer require fzaninotto/faker  
+php artisan migrate
+composer dump-autoload
+php artisan db:seed
+composer require livewire/livewire //esta es para tener el chat
+php artisan serve
+
+Kevin Comandos necesarios en ese orden 2:
 composer require intervention/image

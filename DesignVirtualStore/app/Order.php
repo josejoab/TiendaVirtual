@@ -3,7 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\DesingOrder;
+//autor: José Joab Romero Humba
 class Order extends Model
 {
     //Atributtes id, orderDate(created_at), paymentType, totalPrice, userId
@@ -66,5 +67,8 @@ class Order extends Model
         ]);
     }
 
+    public function desingOrder(){
+        return $this->hasMany(DesingOrder::class);
+    }
 
 }
