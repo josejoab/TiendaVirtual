@@ -1,4 +1,7 @@
 <?php
+/**
+    *Autor: Kevin Herrera
+*/
 
 namespace App\Http\Controllers;
 
@@ -61,7 +64,7 @@ class CategoryController extends Controller
         try
         {
             $category = Category::findOrFail($id);
-            $category->update($request->all());
+            $category->save();
 
             return redirect()->route('');
         }

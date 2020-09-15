@@ -1,10 +1,14 @@
 <?php
+/**
+    *Autor: Kevin Herrera
+*/
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Image;
+use App\Category;
 use App\Design;
 
 class DesignController extends Controller
@@ -56,8 +60,8 @@ class DesignController extends Controller
     public function show()
     {
         $data = [];
-        $data["title"] = "Diseños";
         $designs =  Design::all();
+        $data["title"] = "Diseños";
         $data["designs"] = $designs;
 
         return view('design.show')->with("data",$data);
@@ -69,11 +73,33 @@ class DesignController extends Controller
         try
         {
             $data = [];
+            $categories = Category::all();
             $design = Design::findOrFail($id);
             $data["title"] = "Diseño ".$design->name;
+            $data["categories"] = $categories;
             $data["design"] = $design;
 
-            return view('design.showDesign')->with("data",$data);
+            return view('design.showDesign2')->with("data",$data);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            return redirect()->route('design.show');
+        }
+    }
+
+
+    public function showDesignCategory($id)
+    {
+        try
+        {
+            $data = [];
+            $categories = Category::all();
+            $design = Design::findOrFail($id);
+            $data["title"] = "Categoria ".$design->name;
+            $data["categories"] = $categories;
+            $data["design"] = $design;
+
+            return view('design.showDesign2')->with("data",$data);
         }
         catch(ModelNotFoundException $e)
         {
@@ -89,6 +115,7 @@ class DesignController extends Controller
         $data["title"] = "Editar Diseño";
         $data["design"] = $design;
 
+        
         return view('design.edit')->with("data",$data);
     }
 
@@ -109,7 +136,7 @@ class DesignController extends Controller
             $design->category_id = $request->category_id;
             $design->save();
 
-            return redirect()->route('design.show');
+            return redirect()->route('design.showDesign', $id);
         }
         catch(ModelNotFoundException $e)
         {

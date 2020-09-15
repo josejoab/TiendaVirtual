@@ -1,4 +1,8 @@
 <?php
+/**
+    *Autor: Valeria Suárez
+    *Autor: Kevin Herrera
+*/
 
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +36,8 @@ Route::post('/design/add-to-cart/{id}', 'CartController@addToCart')->name('cart.
 Route::get('/cart/remove', 'CartController@removeCart')->name("cart.removeCart");
 Route::get('/cart/cart', 'CartController@cart')->name("cart.cart");
 Route::post('/cart/buy', 'CartController@buy')->name("cart.buy");
+
+//Design
 Route::get('/design/create', 'DesignController@create')->name('design.create');
 Route::post('/design/save', 'DesignController@save')->name('design.save');
 Route::get('/design/show', 'DesignController@show')->name('design.show');
