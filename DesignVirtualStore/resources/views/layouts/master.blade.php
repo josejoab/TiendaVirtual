@@ -9,6 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fashi | Template</title>
 
+    <!-- Chat Styles -->
+    @livewireStyles
+    @livewireScripts
+    
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -41,8 +45,35 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <a href="/register" class="login-panel"><i class="fa fa-user"></i>Register</a>
+
+                
+                    <!-- Authentication Links -->
+                    @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        @endguest
+
+
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="{{ asset('/fashi/img/flag-1.jpg') }}" data-imagecss="flag yt"
@@ -310,6 +341,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset('/fashi/js/jquery.slicknav.js')}}"></script>
     <script src="{{ asset('/fashi/js/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('/fashi/js/main.js')}}"></script>
+
+
+    @yield('chat')
 </body>
 
 </html>
