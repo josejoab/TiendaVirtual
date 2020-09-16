@@ -51,3 +51,4 @@ Route::post('/category/save', 'CategoryController@save')->name('category.save');
 
 //WishDesign
 Route::get('/wishDesign/save/{wishList_id}{design_id}', 'wishDesignController@save')->name('wishDesign.save');
+Route::get('/wishDesign/show', 'wishDesignController@show')->name('wishDesign.show');
