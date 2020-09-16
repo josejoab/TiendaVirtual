@@ -6,7 +6,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Category;
 use App\DesingOrder;
+
 
 class Design extends Model
 {

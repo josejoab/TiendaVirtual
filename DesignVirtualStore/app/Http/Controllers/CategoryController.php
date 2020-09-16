@@ -17,7 +17,7 @@ class CategoryController extends Controller
         $data = []; //to be sent to the view
         $data["title"] = "Agregar categoria";
 
-        return view('')->with("data",$data);
+        return view('category.create')->with("data",$data);
     }
 
 

@@ -66,7 +66,7 @@ class DesignController extends Controller
         $data["categories"] = $categories;
         $data["designs"] = $designs;
 
-        return view('design.show2')->with("data",$data);
+        return view('design.show')->with("data",$data);
     }
 
 
@@ -83,11 +83,11 @@ class DesignController extends Controller
             $data["designs"] = $designs;
             $data["design"] = $design;
 
-            return view('design.showDesign2')->with("data",$data);
+            return view('design.showDesign')->with("data",$data);
         }
         catch(ModelNotFoundException $e)
         {
-            return redirect()->route('design.show2');
+            return redirect()->route('design.show');
         }
     }
 
@@ -119,11 +119,11 @@ class DesignController extends Controller
             $design->category_id = $request->category_id;
             $design->save();
 
-            return redirect()->route('design.showDesign2', $id);
+            return redirect()->route('design.showDesign', $id);
         }
         catch(ModelNotFoundException $e)
         {
-            return redirect()->route('design.show2');
+            return redirect()->route('design.show');
         }
     }
 
@@ -132,7 +132,7 @@ class DesignController extends Controller
     {
         $design->delete();
 
-        return redirect()->route('design.show2');
+        return redirect()->route('design.show');
     }
 
 

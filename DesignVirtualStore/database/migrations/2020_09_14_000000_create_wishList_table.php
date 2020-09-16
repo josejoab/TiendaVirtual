@@ -1,4 +1,7 @@
 <?php
+/**
+    *Autor: Kevin Herrera
+*/
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -28,6 +31,6 @@ class CreateWishListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishList');
+        Schema::dropIfExists('wishLists');
     }
 }
