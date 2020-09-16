@@ -1,9 +1,13 @@
 <?php
+/**
+    *Autor: Kevin Herrera
+*/
 
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\wishDesign;
 
 class WishList extends Model
 {

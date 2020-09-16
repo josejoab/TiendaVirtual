@@ -4,8 +4,8 @@
 */
 
 namespace App;
-use App\wishList;
-use App\design;
+use App\WishList;
+use App\Design;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -18,8 +18,8 @@ class CreateWishDesignTable extends Migration
     {
         Schema::create('wishDesigns', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('wishList_id')->unsigned();
+            $table->foreign('wishList_id')->references('id')->on('wishLists');
             $table->bigInteger('design_id')->unsigned();
             $table->foreign('design_id')->references('id')->on('designs');
             $table->timestamps();
