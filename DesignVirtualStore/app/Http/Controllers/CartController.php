@@ -43,13 +43,13 @@ class CartController extends Controller
         //$Tprice[0] = $temp + $price;
         $request->session()->put('totalPrice', ($temp + $price));*/
 
-        return back();
+        return redirect()->route('design.show');
     }
 
     public function removeCart(Request $request)
     {
         $request->session()->forget('designs');
-        return redirect()->route('designs.show');
+        return redirect()->route('design.show');
     }
 
     public function cart(Request $request)
