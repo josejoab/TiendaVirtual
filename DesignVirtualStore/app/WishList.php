@@ -1,8 +1,13 @@
 <?php
+/**
+    *Autor: Kevin Herrera
+*/
 
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\wishDesign;
 
 class WishList extends Model
 {
@@ -32,11 +37,8 @@ class WishList extends Model
         $this->attributes['user_id'] = $uId;
     }
 
-
-    public static function validate($request){
-        $request->validate([
-
-        ]);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
 
