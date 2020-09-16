@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="{route('home')}"><i class="fa fa-home"></i> Inicio</a>
-                        <a href="{route('design.show')}">Diseños</a>
-                        <span>Carrito de Comprat</span>
+                        <a href="{route('home')}"><i class="fa fa-home"></i> {{__('words.Inicio')}}</a>
+                        <a href="{route('design.show')}">{{__('words.Diseños')}}</a>
+                        <span>{{__('words.CarritodeCompras')}}</span>
                     </div>
                 </div>
             </div>
@@ -26,8 +26,8 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Imagen</th>
-                                    <th class="p-name">Nombre del Diseño</th>
+                                    <th>{{__('words.Imagen')}}</th>
+                                    <th class="p-name">{{__('words.Nombre')}} del {{__('words.Diseño')}}</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
                                     <th>Total</th>
@@ -55,27 +55,27 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
-                                <a href="{{route('design.show')}}" class="primary-btn continue-shop">Continuar Comprando</a>
-                                <a href="{{route('cart.cart')}}" class="primary-btn up-cart">Actualizar Carrito</a>
+                                <a href="{{route('design.show')}}" class="primary-btn continue-shop">{{__('words.ContinuarComprando')}}</a>
+                                <a href="{{route('cart.cart')}}" class="primary-btn up-cart">{{__('words.ActualizarCarrito')}}</a>
                             </div>
                             <div class="discount-coupon">
                                 <h6>Discount Codes</h6>
                                 <form action="#" class="coupon-form">
                                     <input type="text" placeholder="Enter your codes">
-                                    <button type="submit" class="site-btn coupon-btn">Apply</button>
+                                    <button type="submit" class="site-btn coupon-btn">{{__('words.Aplicar')}}</button>
                                 </form>
                             </div>
                         </div>
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
                                 <ul>
-                                    <li class="subtotal">Subtotal <span>$240.00</span></li>
-                                    <li class="cart-total">Total <span>$99.999</span></li>
+                                    <li class="subtotal">{{__('words.Subtotal')}} <span>$240.00</span></li>
+                                    <li class="cart-total">{{__('words.Total')}} <span>$99.999</span></li>
                                 </ul>
                                 <form action="{{ route('cart.buy') }}" method="POST">
                                 @csrf
-                                    <button  class="proceed-btn" type="submit">PROCEED TO CHECK OUT</button>
-                                    <a href="{{ route('cart.removeCart') }}" class="proceed-btn">Vaciar Carrito</a>
+                                    <button  class="proceed-btn" type="submit">{{__('words.ProcederconCHECKOUT')}}</button>
+                                    <a href="{{ route('cart.removeCart') }}" class="proceed-btn">{{__('words.VaciarCarrito')}}</a>
                                 </form>
                             </div>
                         </div>

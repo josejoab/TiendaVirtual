@@ -8,7 +8,7 @@
     <div class="col-md-8">
       @include('util.message')
       <div class="card">
-        <div class="card-header"> Añadir diseño </div>
+        <div class="card-header"> {{__('words.Añadirdiseño')}} </div>
           <div class="card-body">
             @if($errors->any())
              <ul id="errors">

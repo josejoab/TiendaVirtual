@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <ul class="list-group">
-                <li class="list-group-item active"> Diseño </li>
+                <li class="list-group-item active"> {{__('words.Diseño')}} </li>
                 <li class="list-group-item"><b>Id: </b>{{ $data["design"]['id'] }}</li>
                 <li class="list-group-item"><b>Nombre: </b>{{ $data["design"]['name'] }}</li>
                 <li class="list-group-item"><b>Ancho: </b>{{ $data["design"]['width'] }}</li>
@@ -20,7 +20,7 @@
                 <li>
                     <form method="POST" action="{{ route('design.destroy', $data["design"]) }}">
                         @csrf
-                        <button type="submit" class="btn btn-danger"}> Eliminar </button>
+                        <button type="submit" class="btn btn-danger"}> {{__('words.Eliminar')}} </button>
                     </form>
                 </li>
             </ul>

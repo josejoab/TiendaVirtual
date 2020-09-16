@@ -9,13 +9,13 @@
         <div class="col-md-12">
             <ul id="errors">
                 @foreach($data["design"] as $product)
-                    <li>Nombre: {{ $product->getName() }} - Cantidad: {{ Session::get('designs')[$product->getId()] }}</li>
+                    <li>{{__('words.Nombre')}}: {{ $product->getName() }} - {{__('words.Cantidad')}}: {{ Session::get('designs')[$product->getId()] }}</li>
                 @endforeach
                 <br /><br />
-                Total: precio_total
+                {{__('words.Total')}}: precio_total
                 <form action="{{ route('cart.buy') }}" method="POST">
                 @csrf
-                <button type="submit">Buy</button>
+                <button type="submit">{{__('words.Comprar')}}</button>
                 </form> 
             </ul>
         </div>

@@ -10,9 +10,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-text product-more">
-                    <a href="{{ route('index') }}"><i class="fa fa-home"></i> Inicio </a>
-                    <a href="#"> Tienda </a>
-                    <span> Detalles </span>
+                    <a href="{{ route('index') }}"><i class="fa fa-home"></i> {{__('words.Inicio')}} </a>
+                    <a href="#"> {{__('words.Tienda2')}} </a>
+                    <span> {{__('words.Detalles')}} </span>
                 </div>
             </div>
         </div>
@@ -86,13 +86,13 @@
                     <div class="tab-item">
                         <ul class="nav" role="tablist">
                             <li>
-                                <a class="active" data-toggle="tab" href="#tab-1" role="tab"> DESCRIPCIÓN </a>
+                                <a class="active" data-toggle="tab" href="#tab-1" role="tab"> {{__('words.descrip')}} </a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#tab-2" role="tab"> ESPECIFICACIONES </a>
+                                <a data-toggle="tab" href="#tab-2" role="tab"> {{__('words.especificaciones')}} </a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#tab-3" role="tab"> COMENTARIOS  (02) </a>
+                                <a data-toggle="tab" href="#tab-3" role="tab"> {{__('words.comentarios')}}  (02) </a>
                             </li>
                         </ul>
                     </div>
@@ -102,7 +102,7 @@
                                 <div class="product-content">
                                     <div class="row">
                                         <div class="col-lg-7">
-                                            <h5> Introducción </h5>
+                                            <h5> {{__('words.intro')}} </h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
                                             <h5> Caracteristicas</h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
@@ -117,7 +117,7 @@
                                 <div class="specification-table">
                                     <table>
                                         <tr>
-                                            <td class="p-catagory"> Calificación </td>
+                                            <td class="p-catagory"> {{__('words.Calificación')}} </td>
                                             <td>
                                                 <div class="pd-rating">
                                                     <i class="fa fa-star"></i>
@@ -130,25 +130,25 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory"> Precio </td>
+                                            <td class="p-catagory"> {{__('words.Precio')}} </td>
                                             <td>
                                                 <div class="p-price"> {{ $data["design"]->getPrice() }} </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory"> Añadir al carrito </td>
+                                            <td class="p-catagory"> {{__('words.Añadiralcarrito')}} </td>
                                             <td>
-                                                <div class="cart-add"> + Anañadir al carrito </div>
+                                                <div class="cart-add"> + {{__('words.Añadiralcarrito')}} </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory"> Disponibilidad </td>
+                                            <td class="p-catagory"> {{__('words.Disponibilidad')}} </td>
                                             <td>
-                                                <div class="p-stock"> 22 existencias </div>
+                                                <div class="p-stock"> 22 {{__('words.existencias')}} </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory"> Ancho </td>
+                                            <td class="p-catagory"> {{__('words.Ancho')}} </td>
                                             <td>
                                                 <div class="p-weight"> {{ $data["design"]->getWidth() }} </div>
                                             </td>
@@ -164,11 +164,11 @@
                             </div>
                             <div class="tab-pane fade" id="tab-3" role="tabpanel">
                                 <div class="customer-review-option">
-                                    <h4>2 Comentarios </h4>
+                                    <h4>2 {{__('words.Comentarios')}} </h4>
                                     <div class="comment-option">
                                     </div>
                                     <div class="leave-comment">
-                                        <h4> Comentar </h4>
+                                        <h4> {{__('words.Comentar')}} </h4>
                                         <form action="#" class="comment-form">
                                             <div class="row">
                                                 <div class="col-lg-6">
@@ -179,7 +179,7 @@
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <textarea placeholder="Messages"></textarea>
-                                                    <button type="submit" class="site-btn">Enviar</button>
+                                                    <button type="submit" class="site-btn">{{__('words.Enviar')}}</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -201,7 +201,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2> Productos relacionados </h2>
+                    <h2> {{__('words.Productosrelacionados')}} </h2>
                 </div>
             </div>
         </div>

@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-text product-more">
-                    <a href="{{ route('index') }}"><i class="fa fa-home"></i> Inicio </a>
-                    <span> Tienda </span>
+                    <a href="{{ route('index') }}"><i class="fa fa-home"></i> {{__('words.Inicio')}} </a>
+                    <span> {{__('words.Tienda2')}} </span>
                 </div>
             </div>
         </div>
@@ -30,15 +30,15 @@
                             <div class="col-lg-7 col-md-7">
                                 <div class="select-option">
                                     <select class="sorting">
-                                        <option value=""> ordenar </option>
+                                        <option value=""> {{__('words.ordenar')}} </option>
                                     </select>
                                     <select class="p-show">
-                                        <option value=""> Ver: </option>
+                                        <option value=""> {{__('words.Ver')}} </option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-5 text-right">
-                                <p>ver 01 - 09 de 36 Diseños</p>
+                                <p> {{__('words.Ver2')}}</p>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="loading-more">
                         <i class="icon_loading"></i>
                         <a href="#">
-                            Cargar más
+                        {{__('words.Cargar')}}
                         </a>
                     </div>
                 </div>
@@ -60,6 +60,4 @@
         </div>
     </section>
     <!-- Product Shop Section End -->
-
-
 @endsection
