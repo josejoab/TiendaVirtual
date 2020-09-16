@@ -10,13 +10,12 @@
         <div class="card-header"> Añadir diseño </div>
           <div class="card-body">
             @if($errors->any())
-             <ul id="errors">
-               @foreach($errors->all() as $error)
+              <ul id="errors">
+                @foreach($errors->all() as $error)
                   <li>{{ $error }}</li>
                 @endforeach
               </ul>
             @endif
-
             <form method="POST" action="{{ route('design.save') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" placeholder="Nombre" name="name" value="{{ old('name') }}" />
@@ -28,7 +27,6 @@
                 <input type="file" placeholder="image" name="image"/>
                 <input type="submit" value="Send" />
             </form>
-
           </div>
       </div>
     </div>
