@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="{route('home')}"><i class="fa fa-home"></i> Home</a>
-                        <a href="{route('design.show')}">Shop</a>
-                        <span>Shopping Cart</span>
+                        <a href="{route('home')}"><i class="fa fa-home"></i> Inicio</a>
+                        <a href="{route('design.show')}">Diseños</a>
+                        <span>Carrito de Comprat</span>
                     </div>
                 </div>
             </div>
@@ -26,10 +26,10 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Image</th>
-                                    <th class="p-name">Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
+                                    <th>Imagen</th>
+                                    <th class="p-name">Nombre del Diseño</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
                                     <th>Total</th>
                                     <th><i class="ti-close"></i></th>
                                 </tr>
@@ -55,8 +55,8 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
-                                <a href="#" class="primary-btn continue-shop">Continue shopping</a>
-                                <a href="#" class="primary-btn up-cart">Update cart</a>
+                                <a href="{{route('design.show')}}" class="primary-btn continue-shop">Continuar Comprando</a>
+                                <a href="{{route('cart.cart')}}" class="primary-btn up-cart">Actualizar Carrito</a>
                             </div>
                             <div class="discount-coupon">
                                 <h6>Discount Codes</h6>
@@ -75,6 +75,7 @@
                                 <form action="{{ route('cart.buy') }}" method="POST">
                                 @csrf
                                     <button  class="proceed-btn" type="submit">PROCEED TO CHECK OUT</button>
+                                    <a href="{{ route('cart.removeCart') }}" class="proceed-btn">Vaciar Carrito</a>
                                 </form>
                             </div>
                         </div>
