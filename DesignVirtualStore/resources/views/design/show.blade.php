@@ -18,11 +18,11 @@
     <tbody>
         @foreach ($data["designs"] as $design)
             <tr>
-                <td><div class="card-bold"><a href="{{ route('design.showDesign', ['id'=>$design->id]) }}"> {{ $design->id }} </a></div></td>
-                <td> {{ $design->name }} </td>
-                <td> {{ $design->price }} </td>
-                <td> {{ $design->category_id }} </td>
-                <td><div class="card-bold"><a href="{{ route('design.edit', ['id'=>$design->id]) }}"> Editar </a></div></td>
+                <td><div class="card-bold"><a href="{{ route('design.showDesign', ['id'=>$design->getId()]) }}"> {{ $design->getId() }} </a></div></td>
+                <td> {{ $design->getName() }} </td>
+                <td> {{ $design->getPrice() }} </td>
+                <td> {{ $design->getCategoryId() }} </td>
+                <td><div class="card-bold"><a href="{{ route('design.edit', ['id'=>$design->getId()]) }}"> Editar </a></div></td>
             </tr>
         @endforeach
     </tbody>
