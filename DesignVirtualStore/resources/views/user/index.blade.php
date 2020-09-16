@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8" style="margin-top:20px; margin-bottom:20px">
             <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
+                <div class="card-header">{{ __('words.user') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,7 +17,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in as User!') }}
+                    {{ __('words.userlog') }}
                 </div>
             </div>
         </div>
