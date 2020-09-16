@@ -28,6 +28,6 @@ class CreateWishListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishList');
+        Schema::dropIfExists('wishLists');
     }
 }
