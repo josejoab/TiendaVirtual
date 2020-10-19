@@ -1,15 +1,15 @@
 <?php
 /**
- *  En Inglés
+ *  En Español
 */
 
 return [
 
-        'admin'=>'Admin Dashboard',
-        'user'=>'User Dashboard',
+        'admin'=>'Tablero de Administrador',
+        'user'=>'Tablero de Usuario',
         'userlog'=>'Estás logueado como Usuario!',
         'adminlog'=>'Estás logueado como Administrador!',
-        'AllCategories'=> 'Categories and the test for the lang',
+        'AllCategories'=> 'Categorias y prueba para el lang',
         'IraCarrito'=> 'Ir a Carrito',
         'Comprar'=>'Comprar',
         'Inicio'=>'Inicio',
