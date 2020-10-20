@@ -5,11 +5,12 @@
 
 return [
 
+        'necesitas'=>'¿Qué necesitas?',
         'admin'=>'Tablero de Administrador',
         'user'=>'Tablero de Usuario',
         'userlog'=>'Estás logueado como Usuario!',
         'adminlog'=>'Estás logueado como Administrador!',
-        'AllCategories'=> 'Categorias y prueba para el lang',
+        'AllCategories'=> 'Categorias',
         'IraCarrito'=> 'Ir a Carrito',
         'Comprar'=>'Comprar',
         'Inicio'=>'Inicio',

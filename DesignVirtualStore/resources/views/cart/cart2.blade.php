@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
-                        <a href="{route('home')}"><i class="fa fa-home"></i> {{__('words.Inicio')}}</a>
-                        <a href="{route('design.show')}">{{__('words.Diseños')}}</a>
+                        <a href="{route('home', app()->getLocale())}"><i class="fa fa-home"></i> {{__('words.Inicio')}}</a>
+                        <a href="{route('design.show', app()->getLocale())}">{{__('words.Diseños')}}</a>
                         <span>{{__('words.CarritodeCompras')}}</span>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
-                                <a href="{{route('design.show')}}" class="primary-btn continue-shop">{{__('words.ContinuarComprando')}}</a>
-                                <a href="{{route('cart.cart')}}" class="primary-btn up-cart">{{__('words.ActualizarCarrito')}}</a>
+                                <a href="{{route('design.show', app()->getLocale())}}" class="primary-btn continue-shop">{{__('words.ContinuarComprando')}}</a>
+                                <a href="{{route('cart.cart', app()->getLocale())}}" class="primary-btn up-cart">{{__('words.ActualizarCarrito')}}</a>
                             </div>
                             <div class="discount-coupon">
                                 <h6>Discount Codes</h6>
@@ -75,7 +75,7 @@
                                 <form action="{{ route('cart.buy') }}" method="POST">
                                 @csrf
                                     <button  class="proceed-btn" type="submit">{{__('words.ProcederconCHECKOUT')}}</button>
-                                    <a href="{{ route('cart.removeCart') }}" class="proceed-btn">{{__('words.VaciarCarrito')}}</a>
+                                    <a href="{{ route('cart.removeCart', app()->getLocale()) }}" class="proceed-btn">{{__('words.VaciarCarrito')}}</a>
                                 </form>
                             </div>
                         </div>

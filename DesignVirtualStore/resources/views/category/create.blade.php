@@ -17,7 +17,7 @@
               </ul>
             @endif
 
-            <form method="POST" action="{{ route('category.save') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('category.save', app()->getLocale()) }}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" placeholder="Nombre" name="name" value="{{ old('name') }}" />
                 <input type="text" placeholder="Descripción" name="description" value="{{ old('description') }}" />

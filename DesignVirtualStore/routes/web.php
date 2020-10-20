@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/', '/en');
+
+//language
+Route::group(['prefix' =>'{language}'], function(){
+
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -48,3 +53,6 @@ Route::post('/design/{design}', 'DesignController@destroy')->name('design.destro
 //Category
 Route::get('/category/create', 'CategoryController@create')->name('category.create');
 Route::post('/category/save', 'CategoryController@save')->name('category.save');
+
+
+});

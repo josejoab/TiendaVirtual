@@ -38,11 +38,11 @@
                     <!-- Authentication Links -->
                     @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login', app()->getLocale()) }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -50,38 +50,40 @@
                                 <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}"
+                                <a class="nav-link" href="{{ route('logout',app()->getLocale()) }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
                             </li>
                         @endguest
 
 
-                    <!--
+                    <!--Language-->
+                    <!-- original de fashin
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="{{ asset('/fashi/img/flag-1.jpg') }}" data-imagecss="flag yt"
                                 data-title="English">English</option>
                             <option value='yu' data-image="{{ asset('/fashi/img/flag-2.jpg') }}" data-imagecss="flag yu"
-                                data-title="Spanish">Spanish</option>
+                                data-title="Bangladesh">Spanish</option>
                         </select>
                     </div>
                     -->
+                    <!-- con el select-->
                     <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="{{ asset('/fashi/img/flag-1.jpg') }}" data-imagecss="flag yt"
+                        <select class="language_drop" name="countries" id="countries" style="width:300px;" onchange="location = this.value;">
+                            <option value ="{{ route(Route::currentRouteName(), 'en') }}" data-image="{{ asset('/fashi/img/flag-1.jpg') }}" data-imagecss="flag yt"
                                 data-title="English">English</option>
-                            <option value='yu' data-image="{{ asset('/fashi/img/flag-2.jpg') }}" data-imagecss="flag yu"
+                            <option value ="{{ route(Route::currentRouteName(), 'es') }}" data-image="{{ asset('/fashi/img/flag-2.jpg') }}" data-imagecss="flag yu"
                                 data-title="Spanish">Spanish</option>
                         </select>
                     </div>
-
-
+                    
+                    
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>
@@ -105,7 +107,7 @@
                         <div class="advanced-search">
                             <button type="button" class="category-btn">{{__('words.AllCategories')}}</button>
                             <div class="input-group">
-                                <input type="text" placeholder="¿Qué necesitas?">
+                                <input type="text" placeholder="{{__('words.necesitas')}}">
                                 <button type="button"><i class="ti-search"></i></button>
                             </div>
                         </div>
@@ -119,7 +121,7 @@
                                 </a>
                             </li>
                             <li class="cart-icon">
-                                <a href="{{route('cart.cart')}}">
+                                <a href="{{route('cart.cart', app()->getLocale())}}">
                                     <i class="icon_bag_alt"></i>
                                     <span>3</span>
                                 </a>
@@ -159,8 +161,8 @@
                                         <h5>$120.00</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="{{route('cart.cart')}}" class="primary-btn view-card">{{__('words.IraCarrito')}}</a>
-                                        <a href="{{route('cart.cart')}}" class="primary-btn checkout-btn">{{__('words.Comprar')}}</a>
+                                        <a href="{{route('cart.cart', app()->getLocale())}}" class="primary-btn view-card">{{__('words.IraCarrito')}}</a>
+                                        <a href="{{route('cart.cart', app()->getLocale())}}" class="primary-btn checkout-btn">{{__('words.Comprar')}}</a>
                                     </div>
                                 </div>
                             </li>
@@ -174,8 +176,8 @@
             <div class="container">
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="{{route('index')}}">{{__('words.Inicio')}}</a></li>
-                        <li><a href="{{route('design.show')}}">{{__('words.Tienda')}}</a></li>
+                        <li class="active"><a href="{{route('index', app()->getLocale())}}">{{__('words.Inicio')}}</a></li>
+                        <li><a href="{{route('design.show', app()->getLocale())}}">{{__('words.Tienda')}}</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -282,6 +284,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
 
 </body>
 

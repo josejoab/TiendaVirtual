@@ -13,7 +13,7 @@
                 @endforeach
                 <br /><br />
                 {{__('words.Total')}}: precio_total
-                <form action="{{ route('cart.buy') }}" method="POST">
+                <form action="{{ route('cart.buy', app()->getLocale()) }}" method="POST">
                 @csrf
                 <button type="submit">{{__('words.Comprar')}}</button>
                 </form> 

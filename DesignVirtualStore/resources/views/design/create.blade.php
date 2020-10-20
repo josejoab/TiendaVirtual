@@ -16,7 +16,7 @@
                 @endforeach
               </ul>
             @endif
-            <form method="POST" action="{{ route('design.save') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('design.save', app()->getLocale()) }}" enctype="multipart/form-data">
                 @csrf
                 <input type="text" placeholder="Nombre" name="name" value="{{ old('name') }}" />
                 <input type="number" placeholder="Precio" name="price" value="{{ old('price') }}" />

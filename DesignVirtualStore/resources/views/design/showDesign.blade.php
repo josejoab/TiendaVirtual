@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-text product-more">
-                    <a href="{{ route('index') }}"><i class="fa fa-home"></i> Inicio </a>
+                    <a href="{{ route('index', app()->getLocale()) }}"><i class="fa fa-home"></i> Inicio </a>
                     <a href="#"> Tienda </a>
                     <span> Detalles </span>
                 </div>
