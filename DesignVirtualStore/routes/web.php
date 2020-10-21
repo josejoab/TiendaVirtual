@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/', '/en');
+
+//language
+Route::group(['prefix' =>'{language}'], function(){
+
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -52,3 +57,5 @@ Route::post('/category/save', 'CategoryController@save')->name('category.save');
 //WishDesign
 Route::get('/wishDesign/save/{wishList_id}{design_id}', 'wishDesignController@save')->name('wishDesign.save');
 Route::get('/wishDesign/show', 'wishDesignController@show')->name('wishDesign.show');
+
+});
