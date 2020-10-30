@@ -8,13 +8,13 @@
             </div>
             <ul>
                 <li class="w-icon active"><a><i class="icon_bag_alt"></i></a></li>
-                <li class="quick-view"><a href="{{ route('design.showDesign', ['id'=>$design->getId()]) }}"> + Ver </a></li>
+                <li class="quick-view"><a href="{{ route('design.showDesign', ['id'=>$design->getId(), app()->getLocale()]) }}"> + Ver </a></li>
                 <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
             </ul>
         </div>
         <div class="pi-text">
             <div class="catagory-name"> {{ $design->getCategoryId() }} </div>
-            <a href="{{ route('design.showDesign', ['id'=>$design->getId()]) }}">
+            <a href="{{ route('design.showDesign', ['id'=>$design->getId(), app()->getLocale()]) }}">
                 <h5> {{ $design->getName() }} </h5>
             </a>
             <div class="product-price">
