@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/en');
 
 //language
+//en -> English
+//es -> Español
 Route::group(['prefix' =>'{language}'], function(){
 
 Route::get('/', function () {
