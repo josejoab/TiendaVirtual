@@ -61,4 +61,3 @@ Route::get('/wishDesign/save/{wishList_id}{design_id}', 'wishDesignController@sa
 Route::get('/wishDesign/show', 'wishDesignController@show')->name('wishDesign.show');
 
 });
-
