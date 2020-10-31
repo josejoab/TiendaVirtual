@@ -63,26 +63,16 @@
 
 
                     <!--Language-->
-                    <!-- original de fashin
                     <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                            <option value='yt' data-image="{{ asset('/fashi/img/flag-1.jpg') }}" data-imagecss="flag yt"
-                                data-title="English">English</option>
-                            <option value='yu' data-image="{{ asset('/fashi/img/flag-2.jpg') }}" data-imagecss="flag yu"
-                                data-title="Bangladesh">Spanish</option>
-                        </select>
-                    </div>
-                    -->
-                    <!-- con el select-->
-                    <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width:300px;" onchange="location = this.value;">
+                        <!-- con el select-->
+                        <select class="language_drop" name="countries" id="countries" style="width:400px;" onchange="location = this.value;">
+                            <option value="0" selected>English/Español</option>
                             <option value ="{{ route(Route::currentRouteName(), 'en') }}" data-image="{{ asset('/fashi/img/flag-1.jpg') }}" data-imagecss="flag yt"
                                 data-title="English">English</option>
                             <option value ="{{ route(Route::currentRouteName(), 'es') }}" data-image="{{ asset('/fashi/img/flag-2.jpg') }}" data-imagecss="flag yu"
-                                data-title="Spanish">Spanish</option>
+                                data-title="Spanish">Español</option>
                         </select>
                     </div>
-                    
                     
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
