@@ -29,17 +29,17 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="product-pic-zoom">
-                            <img class="product-big-img" src="{{ asset('/img/designs/'.$data["design"]->getImage()) }}" alt="">
+                            <img class="product-big-img" src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" alt="">
                             <div class="zoom-icon">
                                 <i class="fa fa-search-plus"></i>
                             </div>
                         </div>
                         <div class="product-thumbs">
                             <div class="product-thumbs-track ps-slider owl-carousel">
-                                <div class="pt active" data-imgbigurl="{{ asset('/img/designs/'.$data["design"]->getImage()) }}"><img src="{{ asset('/img/designs/'.$data["design"]->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data["design"]->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data["design"]->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data["design"]->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data["design"]->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data["design"]->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data["design"]->getImage()) }}" alt=""></div>
+                                <div class="pt active" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" alt=""></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             <div class="pd-title">
                                 <span> oranges </span>
                                 <h3> {{ $data["design"]->getName() }} </h3>
-                                <a href="{{ route('wishDesign.save',['wishList_id'=>'1', 'design_id'=>$data["design"]->getId()]) }}" class="heart-icon"><i class="icon_heart_alt"></i></a>
+                                <a href="{{ route('wishDesign.save',['wishList_id'=>'1', 'design_id'=>$data['design']->getId(), app()->getLocale()]) }}" class="heart-icon"><i class="icon_heart_alt"></i></a>
                             </div>
                             <div class="pd-rating">
                                 <i class="fa fa-star"></i>
@@ -63,7 +63,7 @@
                                 <h4> {{ $data["design"]->getPrice() }} <span>{{ $data["design"]->getPrice() }}</span></h4>
                             </div>
                             <div class="quantity">
-                                <form method="POST" action="{{ route('cart.addToCart', ['id'=> $data['design']->getId()]) }}" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('cart.addToCart', ['id'=> $data['design']->getId(), app()->getLocale()]) }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="pro-qty">
                                         <input type="text" name="quantity" value="1">
@@ -89,7 +89,7 @@
                                 <a class="active" data-toggle="tab" href="#tab-1" role="tab"> {{__('words.descrip')}} </a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#tab-2" role="tab">{{__('words.especificaciones')} </a>
+                                <a data-toggle="tab" href="#tab-2" role="tab">{{__('words.especificaciones')}} </a>
                             </li>
                             <li>
                                 <a data-toggle="tab" href="#tab-3" role="tab"> {{__('words.comentarios')}}  (02) </a>
@@ -108,7 +108,7 @@
                                             <p> {{ $data["design"]->getDescription() }} </p>
                                         </div>
                                         <div class="col-lg-5">
-                                            <img src="{{ asset('/img/designs/'.$data["design"]->getImage()) }}" alt="">
+                                            <img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -136,19 +136,19 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory"> {{__('words.Añadiralcarrito')} </td>
+                                            <td class="p-catagory"> {{__('words.Añadiralcarrito')}} </td>
                                             <td>
-                                                <div class="cart-add"> + {{__('words.Añadiralcarrito')} </div>
+                                                <div class="cart-add"> + {{__('words.Añadiralcarrito')}} </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory"> {{__('words.Disponibilidad')} </td>
+                                            <td class="p-catagory"> {{__('words.Disponibilidad')}} </td>
                                             <td>
-                                                <div class="p-stock"> 22 {{__('words.existencias')} </div>
+                                                <div class="p-stock"> 22 {{__('words.existencias')}} </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory"> {{__('words.Ancho')} </td>
+                                            <td class="p-catagory"> {{__('words.Ancho')}} </td>
                                             <td>
                                                 <div class="p-weight"> {{ $data["design"]->getWidth() }} </div>
                                             </td>
@@ -164,11 +164,11 @@
                             </div>
                             <div class="tab-pane fade" id="tab-3" role="tabpanel">
                                 <div class="customer-review-option">
-                                    <h4>2 {{__('words.Comentarios')} </h4>
+                                    <h4>2 {{__('words.Comentarios')}} </h4>
                                     <div class="comment-option">
                                     </div>
                                     <div class="leave-comment">
-                                        <h4> {{__('words.Comentar')} </h4>
+                                        <h4> {{__('words.Comentar')}} </h4>
                                         <form action="#" class="comment-form">
                                             <div class="row">
                                                 <div class="col-lg-6">
@@ -179,7 +179,7 @@
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <textarea placeholder="Messages"></textarea>
-                                                    <button type="submit" class="site-btn">{{__('words.Enviar')}</button>
+                                                    <button type="submit" class="site-btn">{{__('words.Enviar')}}</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -201,7 +201,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2> {{__('words.Productosrelacionados')} </h2>
+                    <h2> {{__('words.Productosrelacionados')}} </h2>
                 </div>
             </div>
         </div>

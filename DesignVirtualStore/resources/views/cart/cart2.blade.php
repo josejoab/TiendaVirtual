@@ -72,7 +72,7 @@
                                     <li class="subtotal">{{__('words.Subtotal')}} <span>$240.00</span></li>
                                     <li class="cart-total">{{__('words.Total')}} <span>$99.999</span></li>
                                 </ul>
-                                <form action="{{ route('cart.buy') }}" method="POST">
+                                <form action="{{ route('cart.buy', app()->getLocale()) }}" method="POST">
                                 @csrf
                                     <button  class="proceed-btn" type="submit">{{__('words.ProcederconCHECKOUT')}}</button>
                                     <a href="{{ route('cart.removeCart', app()->getLocale()) }}" class="proceed-btn">{{__('words.VaciarCarrito')}}</a>

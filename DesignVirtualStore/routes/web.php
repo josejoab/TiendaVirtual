@@ -47,8 +47,8 @@ Route::group(['prefix' =>'{language}'], function(){
     //Design
     Route::get('/design/create', 'DesignController@create')->name('design.create');
     Route::post('/design/save', 'DesignController@save')->name('design.save');
-    Route::get('/design/show/{id}', 'DesignController@showDesign')->name("design.showDesign");
     Route::get('/design/show', 'DesignController@show')->name('design.show');
+    Route::get('/design/show/{id?}', 'DesignController@showDesign')->name("design.showDesign");
     Route::get('/design/edit/{id}', 'DesignController@edit')->name("design.edit");
     Route::post('/design/update/{id}', 'DesignController@update')->name('design.update');
     Route::post('/design/{design}', 'DesignController@destroy')->name('design.destroy');

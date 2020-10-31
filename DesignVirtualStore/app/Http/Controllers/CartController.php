@@ -21,7 +21,7 @@ class CartController extends Controller
         $this->middleware('auth');
     }
 
-    public function addToCart($id, Request $request)
+    public function addToCart($language, $id, Request $request)
     {
         $data = []; //to be sent to the view
         $quantity = $request->quantity;
@@ -43,16 +43,16 @@ class CartController extends Controller
         //$Tprice[0] = $temp + $price;
         $request->session()->put('totalPrice', ($temp + $price));*/
 
-        return redirect()->route('design.show');
+        return redirect()->route('design.show', ['language'=> $language]);
     }
 
-    public function removeCart(Request $request)
+    public function removeCart($language, Request $request)
     {
         $request->session()->forget('designs');
-        return redirect()->route('design.show');
+        return redirect()->route('design.show', ['language'=> $language]);
     }
 
-    public function cart(Request $request)
+    public function cart($language, Request $request)
     {
         $products = $request->session()->get("designs");
         if($products){
@@ -62,10 +62,10 @@ class CartController extends Controller
             return view('cart.cart2')->with("data",$data);
         }
 
-        return redirect()->route('design.show');
+        return redirect()->route('design.show', ['language'=> $language]);
     }
 
-    public function buy(Request $request)
+    public function buy($language, Request $request)
     {   
         $order = new Order();
         $order->setUserId(Auth()->user()->id);
