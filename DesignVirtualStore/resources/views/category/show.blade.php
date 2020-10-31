@@ -17,7 +17,7 @@
     <tbody>
         @foreach ($data["designs"] as $design)
             <tr>
-                <td><div class="card-bold"><a href="{{ route('design.showDesign', ['id'=>$design->id]) }}"> {{ $design->id }} </a></div></td>
+                <td><div class="card-bold"><a href="{{ route('design.showDesign', ['id'=>$design->id, app()->getLocale()]) }}"> {{ $design->id }} </a></div></td>
                 <td> {{ $design->name }} </td>
                 <td> {{ $design->price }} </td>
                 <td> {{ $design->category }} </td>

@@ -115,7 +115,7 @@
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
                             <li class="heart-icon">
-                                <a href="route('wishDesign.show', app()->getLocale())}}">
+                                <a href="{{route('wishDesign.show', app()->getLocale())}}">
                                 
                                     <i class="icon_heart_alt"></i>
                                     <span>1</span>
@@ -178,7 +178,7 @@
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="{{route('index', app()->getLocale())}}">{{__('words.Inicio')}}</a></li>
-                        <li><a href="{{route('design.show', app()->getLocale())}}">{{__('words.Tienda')}}</a></li>
+                        <li><a href="{{route('design.show',app()->getLocale() )}}">{{__('words.Tienda')}}</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

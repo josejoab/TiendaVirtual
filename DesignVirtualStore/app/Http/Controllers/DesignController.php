@@ -70,7 +70,7 @@ class DesignController extends Controller
     }
 
 
-    public function showDesign($id)
+    public function showDesign($language, $id)
     {
         try
         {
@@ -83,7 +83,7 @@ class DesignController extends Controller
             $data["designs"] = $designs;
             $data["design"] = $design;
 
-            return view('design.showDesign')->with("data",$data);
+            return view('design.showDesignP')->with("data",$data);
         }
         catch(ModelNotFoundException $e)
         {
@@ -98,7 +98,7 @@ class DesignController extends Controller
         $design = Design::findOrFail($id);
         $data["title"] = "Editar Diseño";
         $data["design"] = $design;
-        
+        dd($id);
         return view('design.edit')->with("data",$data);
     }
 

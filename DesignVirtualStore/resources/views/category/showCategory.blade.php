@@ -18,7 +18,7 @@
                 <li class="list-group-item"><b>Descripcion: </b>{{ $data["design"]['description'] }}</li>
                 <li><img src="{{ asset('/img/designs/thumbs/'.$data["design"]['image'] ) }}" alt="" width="200"></li>
                 <li>
-                    <form method="POST" action="{{ route('design.destroy', $data["design"]) }}">
+                    <form method="POST" action="{{ route('design.destroy', $data["design", app()->getLocale()]) }}">
                         @csrf
                         <button type="submit" class="btn btn-danger"}> {{__('words.Eliminar')}} </button>
                     </form>
