@@ -94,7 +94,11 @@ class CartController extends Controller
             $order->setTotalPrice($precioTotal);
             $order->save();
 
+            //$request->session()->forget('pdfData');
             $request->session()->forget('designs');
+            $pdfDataaa = $request->session()->get("pdfData");
+            $pdfDataaa = $products;
+            $request->session()->put('pdfData', $pdfDataaa);
         }
 
         return view('cart.buy');

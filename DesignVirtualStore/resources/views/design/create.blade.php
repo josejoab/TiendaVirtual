@@ -18,14 +18,14 @@
             @endif
             <form method="POST" action="{{ route('design.save', app()->getLocale()) }}" enctype="multipart/form-data">
                 @csrf
-                <input type="text" placeholder="Nombre" name="name" value="{{ old('name') }}" />
-                <input type="number" placeholder="Precio" name="price" value="{{ old('price') }}" />
-                <input type="text" placeholder="Descripción" name="description" value="{{ old('description') }}" />
-                <input type="number" placeholder="Ancho" name="width" value="{{ old('width') }}" />
-                <input type="number" placeholder="Largo" name="length" value="{{ old('length') }}" />
-                <input type="text" placeholder="Categoria" name="category_id" value="{{ old('category_id') }}" />
-                <input type="file" placeholder="image" name="image"/>
-                <input type="submit" value="Send" />
+                <input type="text" placeholder="{{__('words.Nombre')}}" name="name" value="{{ old('name') }}" />
+                <input type="number" placeholder="{{__('words.Precio')}}" name="price" value="{{ old('price') }}" />
+                <input type="text" placeholder="{{__('words.Descripcion')}}" name="description" value="{{ old('description') }}" />
+                <input type="number" placeholder="{{__('words.Ancho')}}" name="width" value="{{ old('width') }}" />
+                <input type="number" placeholder="{{__('words.Largo')}}" name="length" value="{{ old('length') }}" />
+                <input type="text" placeholder="{{__('words.Categoria')}}" name="category_id" value="{{ old('category_id') }}" />
+                <input type="file" placeholder="{{__('words.Imagen')}}" name="image"/>
+                <input type="submit" value="{{__('words.Enviar')}}" />
             </form>
           </div>
       </div>
