@@ -73,7 +73,6 @@
                                 data-title="Spanish">Español</option>
                         </select>
                     </div>
-                    
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>
