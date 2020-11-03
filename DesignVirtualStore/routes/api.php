@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/designs', 'Api\DesignApi@index')->name("api.design.index");
+Route::get('/designs/paginate', 'Api\DesignApi@paginate')->name("api.design.paginate");
