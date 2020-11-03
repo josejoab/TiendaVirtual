@@ -17,7 +17,10 @@ class downloadController extends Controller
 
         $products = $request->session()->get("pdfData");
         if($products){
+            $total = $products['total'];
+            unset($products['total']);
             $keys = array_keys($products);
+            $data['total']=$total;
             $designModels = Design::find($keys);
             $data["design"] = $designModels;
             $pdf = \PDF::loadView('pdf', array('data' => $data));

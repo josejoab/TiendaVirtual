@@ -78,6 +78,7 @@ class CartController extends Controller
         $products = $request->session()->get("designs");
         $price = $request->session()->get("subPrice");
         $Tprice = $request->session()->get("totalPrice");
+        $precioTotal=0;
         if($products){
             $keys = array_keys($products);
             for($i=0;$i<count($keys);$i++){
@@ -98,6 +99,7 @@ class CartController extends Controller
             $request->session()->forget('designs');
             $pdfDataaa = $request->session()->get("pdfData");
             $pdfDataaa = $products;
+            $pdfDataaa['total']=$precioTotal;
             $request->session()->put('pdfData', $pdfDataaa);
         }
 
