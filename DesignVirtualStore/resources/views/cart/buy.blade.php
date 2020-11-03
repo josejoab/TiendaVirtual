@@ -6,6 +6,7 @@
         <div class="row" style="margin-top:20px; margin-bottom:20px">
             <h2 class="section-heading mb-4" >
                 <span >{{__('words.TuComprahasidoExitosa')}}</span>
+                <a href="{{ route('download.print', app()->getLocale()) }}">{{__('words.Descargarpdf')}}</a>
             </h2>       
         </div>
     </div>     

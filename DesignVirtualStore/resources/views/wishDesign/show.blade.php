@@ -8,9 +8,9 @@
     <thead>
         <tr>
             <th> Id </th>
-            <th>Diseño</th>
-            <th> Precio </th>
-            <th> Categoria </th>
+            <th> {{__('words.Diseño')}}</th>
+            <th> {{__('words.Precio')}} </th>
+            <th> {{__('words.Categoria')}} </th>
 
         </tr>
     </thead>

@@ -82,8 +82,7 @@ class DesignController extends Controller
             $data["categories"] = $categories;
             $data["designs"] = $designs;
             $data["design"] = $design;
-
-            return view('design.showDesign', ['language'=> $language])->with("data",$data);
+            return view('design.showDesign', ['language' => $language])->with("data",$data);
         }
         catch(ModelNotFoundException $e)
         {

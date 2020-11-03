@@ -42,7 +42,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('words.Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
@@ -73,7 +73,6 @@
                                 data-title="Spanish">Español</option>
                         </select>
                     </div>
-                    
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>

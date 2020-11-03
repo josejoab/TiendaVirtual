@@ -46,7 +46,6 @@
                     <div class="col-lg-6">
                         <div class="product-details">
                             <div class="pd-title">
-                                <span> oranges </span>
                                 <h3> {{ $data["design"]->getName() }} </h3>
                                 <a href="{{ route('wishDesign.save',['wishList_id'=>'1', 'design_id'=>$data['design']->getId(), app()->getLocale()]) }}" class="heart-icon"><i class="icon_heart_alt"></i></a>
                             </div>
@@ -102,7 +101,7 @@
                                 <div class="product-content">
                                     <div class="row">
                                         <div class="col-lg-7">
-                                            <h5> Introducción </h5>
+                                            <h5> {{__('words.intro')}} </h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
                                             <h5> Caracteristicas</h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
