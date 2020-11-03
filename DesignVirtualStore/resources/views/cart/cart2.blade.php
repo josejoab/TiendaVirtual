@@ -27,10 +27,10 @@
                             <thead>
                                 <tr>
                                     <th>{{__('words.Imagen')}}</th>
-                                    <th class="p-name">{{__('words.Nombre')}} del {{__('words.Diseño')}}</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                    <th>Total</th>
+                                    <th class="p-name">{{__('words.Nombredeldiseño')}}</th>
+                                    <th>{{__('words.Precio')}}</th>
+                                    <th>{{__('words.Cantidad')}}</th>
+                                    <th>{{__('words.Total')}}</th>
                                     <th><i class="ti-close"></i></th>
                                 </tr>
                             </thead>
@@ -59,7 +59,7 @@
                                 <a href="{{route('cart.cart', app()->getLocale())}}" class="primary-btn up-cart">{{__('words.ActualizarCarrito')}}</a>
                             </div>
                             <div class="discount-coupon">
-                                <h6>Discount Codes</h6>
+                                <h6>{{__('words.Codigosdedescuento')}}</h6>
                                 <form action="#" class="coupon-form">
                                     <input type="text" placeholder="Enter your codes">
                                     <button type="submit" class="site-btn coupon-btn">{{__('words.Aplicar')}}</button>

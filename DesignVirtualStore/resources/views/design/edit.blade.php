@@ -19,14 +19,14 @@
             <form method="POST" action="{{ route('design.update', ['id' => $data["design"]->getId()]) }}" enctype="multipart/form-data">
                 @csrf
                 <h5></h5>
-                <input type="text" placeholder="Nombre" name="name" value="{{ $data["design"]->getName() }}" />
-                <input type="number" placeholder="Precio" name="price" value="{{ $data["design"]->getPrice() }}" />
-                <input type="text" placeholder="Descripción" name="description" value="{{ $data["design"]->getDescription() }}" />
-                <input type="number" placeholder="Ancho" name="width" value="{{ $data["design"]->getWidth() }}" />
-                <input type="number" placeholder="Largo" name="length" value="{{ $data["design"]->getLength() }}" />
-                <input type="text" placeholder="Categoria" name="category_id" value="{{ $data["design"]->getCategoryId() }}" />
-                <input type="file" placeholder="image" name="image"/>
-                <input type="submit" value="Send" />
+                <input type="text" placeholder="{{__('words.Nombre')}}" name="name" value="{{ $data["design"]->getName() }}" />
+                <input type="number" placeholder="{{__('words.Precio')}}" name="price" value="{{ $data["design"]->getPrice() }}" />
+                <input type="text" placeholder="{{__('words.Descripcion')}}" name="description" value="{{ $data["design"]->getDescription() }}" />
+                <input type="number" placeholder="{{__('words.Ancho')}}" name="width" value="{{ $data["design"]->getWidth() }}" />
+                <input type="number" placeholder="{{__('words.Largo')}}" name="length" value="{{ $data["design"]->getLength() }}" />
+                <input type="text" placeholder="{{__('words.Categoria')}}" name="category_id" value="{{ $data["design"]->getCategoryId() }}" />
+                <input type="file" placeholder="{{__('words.Imagen')}}" name="image"/>
+                <input type="submit" value="{{__('words.Enviar')}}" />
             </form>
           </div>
       </div>
