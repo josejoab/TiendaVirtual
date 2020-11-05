@@ -9,23 +9,15 @@ use App\DesignOrder;
 use App\User;
 use App\Http\Controllers\Auth;
 use Barryvdh\DomPDF\Facade as PDF;
+use App\Interfaces\pdfDownload;
 
 class downloadController extends Controller
 {
     //download PDF
     public function print($language, Request $request){
-
-        $products = $request->session()->get("pdfData");
-        if($products){
-            $total = $products['total'];
-            unset($products['total']);
-            $keys = array_keys($products);
-            $data['total']=$total;
-            $designModels = Design::find($keys);
-            $data["design"] = $designModels;
-            $pdf = \PDF::loadView('pdf', array('data' => $data));
-            $request->session()->forget('pdfData');
-            return $pdf->download('SketchDesing.pdf');
-        }
+        //$newPDF = app(pdfDownload::class);
+        $newPDF = app()->makeWith(pdfDownload::class, ['request'=>$request]);
+        //$newPDF->printPDF($language, $request);
+        return $newPDF->printPDF($language, $request);
     }
 }
