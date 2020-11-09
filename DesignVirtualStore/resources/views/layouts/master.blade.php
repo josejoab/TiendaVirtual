@@ -156,7 +156,11 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            @guest
+                                <li class="cart-price">$ 0</li>
+                            @else
+                                <li class="cart-price">$ {{ Session::get('totalPrice')["TotalPrice"] }}</li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
@@ -168,6 +172,13 @@
                     <ul>
                         <li class="active"><a href="{{route('index', app()->getLocale())}}">{{__('words.Inicio')}}</a></li>
                         <li><a href="{{route('design.show',app()->getLocale() )}}">{{__('words.Tienda')}}</a></li>
+                        @guest
+                        @else
+                            @if(Auth::user()->role_id==1)
+                                <li><a href="{{route('category.create',app()->getLocale() )}}">{{__('words.CCategoria')}}</a></li>
+                                <li><a href="{{route('design.create',app()->getLocale() )}}">{{__('words.CDiseño')}}</a></li>
+                            @endif
+                        @endguest
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

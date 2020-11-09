@@ -31,6 +31,9 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
+        $Tprice = $request->session()->get("totalPrice");
+        $Tprice['TotalPrice'] = 0;
+        $request->session()->put('totalPrice', $Tprice);
         if($user->role_id==1){
             return redirect()->route('admin', ['language' => app()->getLocale()]);
         }else{

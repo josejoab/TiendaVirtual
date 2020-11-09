@@ -34,14 +34,13 @@ class CartController extends Controller
         $price[$id] = $design->getPrice()*$quantity;
         $request->session()->put('subPrice', $price);
 
-        /*$Tprice = $request->session()->get("totalPrice");
+        $Tprice = $request->session()->get("totalPrice");
         $keys = array_keys($products);
         if(count($keys)<=1){
-            $Tprice = 0;
+            $Tprice['TotalPrice'] = 0;
         }
-        $temp = $Tprice;
-        //$Tprice[0] = $temp + $price;
-        $request->session()->put('totalPrice', ($temp + $price));*/
+        $Tprice['TotalPrice'] = $Tprice['TotalPrice'] + $price[$id];
+        $request->session()->put('totalPrice',$Tprice);
 
         return redirect()->route('design.show', ['language'=> $language]);
     }
@@ -49,16 +48,22 @@ class CartController extends Controller
     public function removeCart($language, Request $request)
     {
         $request->session()->forget('designs');
+        $Tprice = $request->session()->get("totalPrice");
+        $Tprice['TotalPrice'] = 0;
+        $request->session()->put('totalPrice', $Tprice);
+        $request->session()->forget('subPrice');
         return redirect()->route('design.show', ['language'=> $language]);
     }
 
     public function cart($language, Request $request)
     {
         $products = $request->session()->get("designs");
+        $Tprice = $request->session()->get("totalPrice");
         if($products){
             $keys = array_keys($products);
             $designModels = Design::find($keys);
             $data["design"] = $designModels;
+            $data["total"] = $Tprice['TotalPrice'];
             return view('cart.cart2')->with("data",$data);
         }
 
@@ -86,16 +91,16 @@ class CartController extends Controller
                 $item->setDesignId($keys[$i]);
                 $item->setOrderId($order->getId());
                 $item->setQuantity($products[$keys[$i]]);
-                $productActual = Design::find($keys[$i]);
-                $precioTotal = $precioTotal + $productActual->getPrice()*$products[$keys[$i]];
-                $item->setSubTotalPrice($productActual->getPrice()*$products[$keys[$i]]);
+                $item->setSubTotalPrice($price[$keys[$i]]);
                 $item->save();
             }
 
-            $order->setTotalPrice($precioTotal);
+            $order->setTotalPrice($Tprice["TotalPrice"]);
             $order->save();
 
             //$request->session()->forget('pdfData');
+            $Tprice['TotalPrice'] = 0;
+            $request->session()->put('totalPrice', $Tprice);
             $request->session()->forget('designs');
             $pdfDataaa = $request->session()->get("pdfData");
             $pdfDataaa = $products;

@@ -69,8 +69,8 @@
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
                                 <ul>
-                                    <li class="subtotal">{{__('words.Subtotal')}} <span>$240.00</span></li>
-                                    <li class="cart-total">{{__('words.Total')}} <span>$99.999</span></li>
+                                    <li class="subtotal">{{__('words.Subtotal')}} <span>$ {{$data["total"]}}</span></li>
+                                    <li class="cart-total">{{__('words.Total')}} <span>$ {{$data["total"]}}</span></li>
                                 </ul>
                                 <form action="{{ route('cart.buy', app()->getLocale()) }}" method="POST">
                                 @csrf

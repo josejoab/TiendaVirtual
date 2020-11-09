@@ -79,5 +79,7 @@ return [
         'Celular'=>'Celphone',
         'Confirmarcontraseña'=>'Confirm Password',
         'Filtrar'=>'Filter',
+        'CCategoria'=>'Create Category',
+        'CDiseño'=>'Create Design',
 ];
 
