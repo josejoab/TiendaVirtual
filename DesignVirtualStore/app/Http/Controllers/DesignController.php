@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Category;
 use App\Design;
+use App\User;
 use App\Http\Controllers\Auth;
 
 class DesignController extends Controller
@@ -80,7 +81,7 @@ class DesignController extends Controller
     }
 
 
-    public function showDesign($language, $id)
+    public function showDesign($language, $id, Request $request)
     {
         try
         {
@@ -88,10 +89,12 @@ class DesignController extends Controller
             $categories = Category::all();
             $designs =  Design::all();
             $design = Design::findOrFail($id);
+            $user = Auth()->user()->id;
             $data["title"] = "Design ".$design->getName();
             $data["categories"] = $categories;
             $data["designs"] = $designs;
             $data["design"] = $design;
+            $data["user"] = $user;
             return view('design.showDesign', ['language' => $language])->with("data",$data);
         }
         catch(ModelNotFoundException $e)

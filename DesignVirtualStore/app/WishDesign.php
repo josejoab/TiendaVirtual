@@ -13,7 +13,6 @@ class WishDesign extends Model
 {
     //atributtes id, wishList_id, design_id
     protected $fillable = ['wishList_id','design_id'];
-    public $table = "wishDesigns";
 
     public function getId()
     {

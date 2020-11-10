@@ -14,6 +14,6 @@ class WishListSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\WishList::class, 5)->create();
+        factory(App\WishList::class, 23)->create();
     }
 }

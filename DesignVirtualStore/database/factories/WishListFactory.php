@@ -8,8 +8,13 @@
 use App\WishList;
 use Faker\Generator as Faker;
 
+
+
 $factory->define(WishList::class, function (Faker $faker) {
+    static $user = 1;
     return [
-        'user_id'=>$faker->numberBetween($min = 1, $max = 3)
+        'user_id'=>$user++
     ];
 });
+
+

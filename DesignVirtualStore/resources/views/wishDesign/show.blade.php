@@ -18,7 +18,7 @@
         @foreach ($data["wishDesigns"] as $design)
             <tr>
                 <td><div class="card-bold"><a href=""> {{ $design->id }} </a></div></td>
-                <td><img src="{{ asset('/img/designs/thumbs/'.$design->image ) }}" alt="" width="200"></td>
+                <td><img src="{{ asset('/img/designs/'.$design->image ) }}" alt="" width="200"></td>
                 <td> {{ $design->price }} </td>
                 <td> {{ $design->category_id }} </td>
             </tr>
