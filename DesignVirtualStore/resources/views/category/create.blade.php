@@ -19,9 +19,9 @@
 
             <form method="POST" action="{{ route('category.save', app()->getLocale()) }}" enctype="multipart/form-data">
                 @csrf
-                <input type="text" placeholder="Nombre" name="name" value="{{ old('name') }}" />
-                <input type="text" placeholder="Descripción" name="description" value="{{ old('description') }}" />
-                <input type="submit" value="Send" />
+                <input type="text" placeholder="{{__('words.Nombre')}}" name="name" value="{{ old('name') }}" />
+                <input type="text" placeholder="{{__('words.Descripcion')}}" name="description" value="{{ old('description') }}" />
+                <input type="submit" value="{{__('words.Enviar')}}" />
             </form>
 
           </div>
