@@ -64,4 +64,7 @@ Route::group(['prefix' =>'{language}'], function(){
     //Download PDF
     Route::get('/download', 'downloadController@print')->name('download.print');
 
+    //Api
+    Route::get('/api/inBag', 'ApiController@inBag')->name('inBag.api');
+
 });
