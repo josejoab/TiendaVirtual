@@ -58,7 +58,7 @@ Route::group(['prefix' =>'{language}'], function(){
     Route::post('/category/save', 'CategoryController@save')->name('category.save');
 
     //WishDesign
-    Route::get('/wishDesign/save/{wishList_id}{design_id}', 'WishDesignController@save')->name('wishDesign.save');
+    Route::get('/wishDesign/save/{wishList_id}/{design_id}', 'WishDesignController@save')->name('wishDesign.save');
     Route::get('/wishDesign/show', 'WishDesignController@show')->name('wishDesign.show');
 
     //Download PDF

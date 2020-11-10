@@ -16,7 +16,7 @@ class CreateWishListTable extends Migration
      */
     public function up()
     {
-        Schema::create('wishLists', function (Blueprint $table) {
+        Schema::create('wish_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
@@ -31,6 +31,6 @@ class CreateWishListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishLists');
+        Schema::dropIfExists('wish_lists');
     }
 }

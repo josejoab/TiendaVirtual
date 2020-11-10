@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DesignSeeder::class);
         $this->call(OrderSeeder::class);
         $this->call(DesignOrderSeeder::class);
+        $this->call(WishListSeeder::class);
+        $this->call(WishDesignSeeder::class);
     }
 }

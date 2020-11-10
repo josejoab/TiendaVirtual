@@ -12,10 +12,12 @@ use App\Http\Controllers\Auth;
 
 class CategoryController extends Controller
 {
+
     public function __construct()
     {
                 $this->middleware('auth');
     }
+
 
     public function create()
     {
@@ -58,7 +60,7 @@ class CategoryController extends Controller
         {
             $data = [];
             $category = Category::findOrFail($id);
-            $data["title"] = "Categoria ".$category->name;
+            $data["title"] = "Category ".$category->name;
             $data["category"] = $category;
 
             return view('')->with("data",$data);
