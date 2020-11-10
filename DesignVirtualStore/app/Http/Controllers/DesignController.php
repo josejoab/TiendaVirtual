@@ -62,7 +62,7 @@ class DesignController extends Controller
     }
 
 
-    public function show()
+    public function show()  
     {
         $data = [];
         $categories = Category::all();
