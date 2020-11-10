@@ -8,16 +8,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Category;
+use App\Http\Controllers\Auth;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+                $this->middleware('auth');
+    }
 
     public function create()
     {
-        $data = []; //to be sent to the view
-        $data["title"] = "Agregar categoria";
+        $id = Auth()->user()->role_id;
+        if($id==1){
+            $data = []; //to be sent to the view
+            $data["title"] = "Agregar categoria";
 
-        return view('category.create')->with("data",$data);
+            return view('category.create')->with("data",$data);
+        }
+        else{
+            return redirect()->route('index', ['language'=> $language]);
+        } 
     }
 
 
@@ -61,17 +72,23 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        try
-        {
-            $category = Category::findOrFail($id);
-            $category->save();
+        $id = Auth()->user()->role_id;
+        if($id==1){
+            try
+            {
+                $category = Category::findOrFail($id);
+                $category->save();
 
-            return redirect()->route('');
+                return redirect()->route('');
+            }
+            catch(ModelNotFoundException $e)
+            {
+                return redirect()->route('');
+            }
         }
-        catch(ModelNotFoundException $e)
-        {
-            return redirect()->route('');
-        }
+        else{
+            return redirect()->route('index', ['language'=> $language]);
+        }     
     }
 
 

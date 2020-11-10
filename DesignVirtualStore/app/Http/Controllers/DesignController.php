@@ -10,15 +10,26 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Category;
 use App\Design;
 use Image;
+use App\Http\Controllers\Auth;
 
 class DesignController extends Controller
 {
-    public function create()
+    public function __construct()
     {
-        $data = []; //to be sent to the view
-        $data["title"] = "Agregar Diseño";
+        $this->middleware('auth');
+    }
+    public function create($language)
+    {   
+        $id = Auth()->user()->role_id;
+        if($id==1){
+            $data = []; //to be sent to the view
+            $data["title"] = "Agregar Diseño";
 
-        return view('design.create')->with("data",$data);
+            return view('design.create')->with("data",$data);
+        }
+        else{
+            return redirect()->route('index', ['language'=> $language]);
+        }
     }
 
 
@@ -93,37 +104,49 @@ class DesignController extends Controller
 
     public function edit($id)
     {
-        $data = []; //to be sent to the view
-        $design = Design::findOrFail($id);
-        $data["title"] = "Editar Diseño";
-        $data["design"] = $design;
-        dd($id);
-        return view('design.edit')->with("data",$data);
+        $id = Auth()->user()->role_id;
+        if($id==1){
+            $data = []; //to be sent to the view
+            $design = Design::findOrFail($id);
+            $data["title"] = "Editar Diseño";
+            $data["design"] = $design;
+            dd($id);
+            return view('design.edit')->with("data",$data);
+        }
+        else{
+            return redirect()->route('index', ['language'=> $language]);
+        }    
     }
 
 
     public function update(Request $request, $id)
     {
-        try
-        {
-            Design::validate($request);
-            $design = Design::findOrFail($id);
-            $image = self::saveImage($request);
-            $design->name = $request->name;
-            $design->price = $request->price;
-            $design->description = $request->description;
-            $design->image = $image;
-            $design->width = $request->width;
-            $design->length = $request->length;
-            $design->category_id = $request->category_id;
-            $design->save();
+        $id = Auth()->user()->role_id;
+        if($id==1){
+            try
+            {
+                Design::validate($request);
+                $design = Design::findOrFail($id);
+                $image = self::saveImage($request);
+                $design->name = $request->name;
+                $design->price = $request->price;
+                $design->description = $request->description;
+                $design->image = $image;
+                $design->width = $request->width;
+                $design->length = $request->length;
+                $design->category_id = $request->category_id;
+                $design->save();
 
-            return redirect()->route('design.showDesign', $id);
+                return redirect()->route('design.showDesign', $id);
+            }
+            catch(ModelNotFoundException $e)
+            {
+                return redirect()->route('design.show');
+            }
         }
-        catch(ModelNotFoundException $e)
-        {
-            return redirect()->route('design.show');
-        }
+        else{
+            return redirect()->route('index', ['language'=> $language]);
+        }  
     }
 
 

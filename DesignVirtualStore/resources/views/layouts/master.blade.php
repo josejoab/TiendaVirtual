@@ -115,46 +115,6 @@
                                     <i class="icon_bag_alt"></i>
                                     <span>3</span>
                                 </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="{{ asset('/fashi/img/select-product-1.jpg') }}" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="{{ asset('/fashi/img/select-product-2.jpg') }}" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="{{route('cart.cart', app()->getLocale())}}" class="primary-btn view-card">{{__('words.IraCarrito')}}</a>
-                                        <a href="{{route('cart.cart', app()->getLocale())}}" class="primary-btn checkout-btn">{{__('words.Comprar')}}</a>
-                                    </div>
-                                </div>
                             </li>
                             @guest
                                 <li class="cart-price">$ 0</li>
@@ -192,33 +152,6 @@
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
         <div class="container">
-            <div class="logo-carousel owl-carousel">
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="{{ asset('/fashi/img/logo-carousel/logo-1.png')}}" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="{{ asset('/fashi/img/logo-carousel/logo-2.png')}}" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="{{ asset('/fashi/img/logo-carousel/logo-3.png')}}" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="{{ asset('/fashi/img/logo-carousel/logo-4.png')}}" alt="">
-                    </div>
-                </div>
-                <div class="logo-item">
-                    <div class="tablecell-inner">
-                        <img src="{{ asset('/fashi/img/logo-carousel/logo-5.png')}}" alt="">
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- Partner Logo Section End -->
