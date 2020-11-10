@@ -37,7 +37,7 @@
                             <tbody>
                             @foreach($data["design"] as $product)
                                 <tr>
-                                    <td class="cart-pic first-row"><img src="{{ asset('/fashi/img/cart-page/product-1.jpg')}}" alt=""></td>
+                                    <td class="cart-pic first-row"><img src="{{ asset('/img/designs/'.$product->getImage()) }}" width="200" height="150"></td>
                                     <td class="cart-title first-row">
                                         <h5>{{ $product->getName() }}</h5>
                                     </td>
