@@ -1,6 +1,6 @@
 <?php
 /**
-    *Autor: Kevin Herrera
+    *Author: Kevin Herrera
 */
 
 namespace App\Http\Controllers;
@@ -13,20 +13,25 @@ use App\Http\Controllers\Auth;
 
 class DesignController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
     }
+
+
     public function create($language)
     {   
         $id = Auth()->user()->role_id;
-        if($id==1){
+        if($id==1)
+        {
             $data = []; //to be sent to the view
-            $data["title"] = "Agregar Diseño";
+            $data["title"] = "Create Design";
 
             return view('design.create')->with("data",$data);
         }
-        else{
+        else
+        {
             return redirect()->route('index', ['language'=> $language]);
         }
     }
@@ -67,7 +72,7 @@ class DesignController extends Controller
         $data = [];
         $categories = Category::all();
         $designs =  Design::all();
-        $data["title"] = "Diseños";
+        $data["title"] = "Designs";
         $data["categories"] = $categories;
         $data["designs"] = $designs;
 
@@ -83,7 +88,7 @@ class DesignController extends Controller
             $categories = Category::all();
             $designs =  Design::all();
             $design = Design::findOrFail($id);
-            $data["title"] = "Diseño ".$design->getName();
+            $data["title"] = "Design ".$design->getName();
             $data["categories"] = $categories;
             $data["designs"] = $designs;
             $data["design"] = $design;
@@ -102,7 +107,7 @@ class DesignController extends Controller
         if($id==1){
             $data = []; //to be sent to the view
             $design = Design::findOrFail($id);
-            $data["title"] = "Editar Diseño";
+            $data["title"] = "Edit Design";
             $data["design"] = $design;
             dd($id);
             return view('design.edit')->with("data",$data);

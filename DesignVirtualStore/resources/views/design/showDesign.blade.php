@@ -103,7 +103,7 @@
                                         <div class="col-lg-7">
                                             <h5> {{__('words.intro')}} </h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
-                                            <h5> Caracteristicas</h5>
+                                            <h5> {{__('words.caracteristicas')}}</h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
                                         </div>
                                         <div class="col-lg-5">
