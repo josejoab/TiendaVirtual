@@ -18,7 +18,7 @@ class ApiController extends Controller
         $data["title"] = "Api inBag";
         $data["api"] = $response->json();
 
-        return view('api.inbag', compact('data'));
+        return view('Api.inbag', compact('data'));
     }
 
     
