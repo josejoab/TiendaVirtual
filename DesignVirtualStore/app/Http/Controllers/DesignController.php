@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Category;
 use App\Design;
-use Image;
 use App\Http\Controllers\Auth;
 
 class DesignController extends Controller
@@ -57,11 +56,6 @@ class DesignController extends Controller
         $name = time().'.'.$image->getClientOriginalExtension();
         $destiny = public_path('img/designs');
         $request->image->move($destiny, $name);
-        $red = Image::make($destiny.'/'.$name);
-        $red->resize(200, null, function($constraint){
-            $constraint->aspectRatio();
-        });
-        $red->save($destiny.'/thumbs/'.$name);
         $request->image = $name;
         
         return $name;

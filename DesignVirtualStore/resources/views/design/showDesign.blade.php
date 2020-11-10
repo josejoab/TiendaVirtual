@@ -36,10 +36,10 @@
                         </div>
                         <div class="product-thumbs">
                             <div class="product-thumbs-track ps-slider owl-carousel">
-                                <div class="pt active" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
+                                <div class="pt active" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200"></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200"></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200" ></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200" ></div>
                             </div>
                         </div>
                     </div>

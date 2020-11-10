@@ -35,6 +35,16 @@ class UserSeeder extends Seeder
             'password' => bcrypt('zftUYR85'),
         ]);
 
+        DB::table('users')->insert([
+            'name' => 'Alex',
+            'lastname' => 'Herrera',
+            'celphone' => '123456789',
+            'username' => 'kaherrerag',
+            'email' => 'kaherrerag@eafit.edu.co',
+            'password' => bcrypt('123456'),
+            'role_id' => 1,
+        ]);
+
         factory(App\User::class, 20)->create();
     }
 }
