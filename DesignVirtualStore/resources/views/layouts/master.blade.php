@@ -36,31 +36,21 @@
             <div class="container">
                 <div class="ht-right">
                     <!-- Authentication Links -->
+                    <div class="btn-group" style="margin-top:20px; margin-bottom:20px">
                     @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login', app()->getLocale()) }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register', app()->getLocale()) }}">{{ __('words.Registrarse') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout',app()->getLocale()) }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        @endguest
-
+                        <a class="btn btn-light" href="{{ route('login', app()->getLocale()) }}"><i class="fa fa-user"></i>{{ __('Login') }}</>
+                        @if (Route::has('register'))                                
+                            <a class="btn btn-light" href="{{ route('register', app()->getLocale()) }}"><i class="fa fa-user"></i>{{ __('words.Registrarse') }}</a>
+                        @endif
+                    @else
+                        <a class="btn btn-light" href="#" disabled>{{ Auth::user()->name }}</a>
+                        <a class="btn btn-light" href="{{ route('logout',app()->getLocale()) }}"onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                        <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" class="d-none">
+                        @csrf
+                        </form>
+                    @endguest
+                    </div>
 
                     <!--Language-->
                     <div class="lan-selector">
@@ -72,12 +62,6 @@
                             <option value ="{{ route(Route::currentRouteName(), 'es') }}" data-image="{{ asset('/fashi/img/flag-2.jpg') }}" data-imagecss="flag yu"
                                 data-title="Spanish">Español</option>
                         </select>
-                    </div>
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
                     </div>
                 </div>
             </div>
@@ -107,13 +91,11 @@
                                 <a href="{{route('wishDesign.show', app()->getLocale())}}">
                                 
                                     <i class="icon_heart_alt"></i>
-                                    <span>1</span>
                                 </a>
                             </li>
                             <li class="cart-icon">
                                 <a href="{{route('cart.cart', app()->getLocale())}}">
                                     <i class="icon_bag_alt"></i>
-                                    <span>3</span>
                                 </a>
                             </li>
                             @guest
