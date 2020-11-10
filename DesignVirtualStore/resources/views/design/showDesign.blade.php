@@ -36,10 +36,10 @@
                         </div>
                         <div class="product-thumbs">
                             <div class="product-thumbs-track ps-slider owl-carousel">
-                                <div class="pt active" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
-                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/thumbs/'.$data['design']->getImage()) }}" alt=""></div>
+                                <div class="pt active" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200"></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200"></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200" ></div>
+                                <div class="pt" data-imgbigurl="{{ asset('/img/designs/'.$data['design']->getImage()) }}"><img src="{{ asset('/img/designs/'.$data['design']->getImage()) }}" width="200" height="200" ></div>
                             </div>
                         </div>
                     </div>
@@ -73,9 +73,9 @@
                             <div class="pd-share">
                                 <div class="p-code">Sku : 00012</div>
                                 <div class="pd-social">
-                                    <a href="#"><i class="ti-facebook"></i></a>
-                                    <a href="#"><i class="ti-twitter-alt"></i></a>
-                                    <a href="#"><i class="ti-linkedin"></i></a>
+                                    <a><i class="ti-facebook"></i></a>
+                                    <a><i class="ti-twitter-alt"></i></a>
+                                    <a><i class="ti-linkedin"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                                         <div class="col-lg-7">
                                             <h5> {{__('words.intro')}} </h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
-                                            <h5> Caracteristicas</h5>
+                                            <h5> {{__('words.caracteristicas')}}</h5>
                                             <p> {{ $data["design"]->getDescription() }} </p>
                                         </div>
                                         <div class="col-lg-5">

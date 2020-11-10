@@ -1,6 +1,6 @@
 <?php
 /**
-    *Autor: Kevin Herrera
+    *Author: Kevin Herrera
 */
 
 namespace App\Http\Controllers;
@@ -9,25 +9,29 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Category;
 use App\Design;
-use Image;
 use App\Http\Controllers\Auth;
 
 class DesignController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
     }
+
+
     public function create($language)
     {   
         $id = Auth()->user()->role_id;
-        if($id==1){
+        if($id==1)
+        {
             $data = []; //to be sent to the view
-            $data["title"] = "Agregar Diseño";
+            $data["title"] = "Create Design";
 
             return view('design.create')->with("data",$data);
         }
-        else{
+        else
+        {
             return redirect()->route('index', ['language'=> $language]);
         }
     }
@@ -57,23 +61,18 @@ class DesignController extends Controller
         $name = time().'.'.$image->getClientOriginalExtension();
         $destiny = public_path('img/designs');
         $request->image->move($destiny, $name);
-        $red = Image::make($destiny.'/'.$name);
-        $red->resize(200, null, function($constraint){
-            $constraint->aspectRatio();
-        });
-        $red->save($destiny.'/thumbs/'.$name);
         $request->image = $name;
         
         return $name;
     }
 
 
-    public function show()
+    public function show()  
     {
         $data = [];
         $categories = Category::all();
         $designs =  Design::all();
-        $data["title"] = "Diseños";
+        $data["title"] = "Designs";
         $data["categories"] = $categories;
         $data["designs"] = $designs;
 
@@ -89,7 +88,7 @@ class DesignController extends Controller
             $categories = Category::all();
             $designs =  Design::all();
             $design = Design::findOrFail($id);
-            $data["title"] = "Diseño ".$design->getName();
+            $data["title"] = "Design ".$design->getName();
             $data["categories"] = $categories;
             $data["designs"] = $designs;
             $data["design"] = $design;
@@ -108,7 +107,7 @@ class DesignController extends Controller
         if($id==1){
             $data = []; //to be sent to the view
             $design = Design::findOrFail($id);
-            $data["title"] = "Editar Diseño";
+            $data["title"] = "Edit Design";
             $data["design"] = $design;
             dd($id);
             return view('design.edit')->with("data",$data);

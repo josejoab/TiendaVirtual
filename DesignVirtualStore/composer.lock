@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18daea449123cf2e93d28efb09c93971",
+    "content-hash": "a0e187d4740b634918403494da3d912a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1505,16 +1505,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.2.3",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "0480aa04aa08314dd2ed1b62615d8184e7d3071a"
+                "reference": "4dfc7752254eb316911dec13c57578768bd1b743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/0480aa04aa08314dd2ed1b62615d8184e7d3071a",
-                "reference": "0480aa04aa08314dd2ed1b62615d8184e7d3071a",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/4dfc7752254eb316911dec13c57578768bd1b743",
+                "reference": "4dfc7752254eb316911dec13c57578768bd1b743",
                 "shasum": ""
             },
             "require": {
@@ -1545,6 +1545,9 @@
                 }
             },
             "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
                 "psr-4": {
                     "Livewire\\": "src/"
                 }
@@ -1566,7 +1569,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-15T02:25:20+00:00"
+            "time": "2020-10-27T19:08:41+00:00"
         },
         {
             "name": "monolog/monolog",

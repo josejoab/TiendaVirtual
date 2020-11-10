@@ -81,5 +81,6 @@ return [
         'Filtrar'=>'Filter',
         'CCategoria'=>'Create Category',
         'CDiseño'=>'Create Design',
+        'caracteristicas' => 'Features'
 ];
 

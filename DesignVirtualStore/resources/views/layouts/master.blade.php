@@ -114,6 +114,7 @@
                     <ul>
                         <li class="active"><a href="{{route('index', app()->getLocale())}}">{{__('words.Inicio')}}</a></li>
                         <li><a href="{{route('design.show',app()->getLocale() )}}">{{__('words.Tienda')}}</a></li>
+                        <li><a href="{{route('inBag.api',app()->getLocale() )}}">{{__('Api')}}</a></li>
                         @guest
                         @else
                             @if(Auth::user()->role_id==1)
