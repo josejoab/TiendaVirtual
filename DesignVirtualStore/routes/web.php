@@ -65,6 +65,6 @@ Route::group(['prefix' =>'{language}'], function(){
     Route::get('/download', 'downloadController@print')->name('download.print');
 
     //Api
-    Route::get('/api/inBag', 'ApiController@inBag')->name('inBag.api');
+    Route::get('/api/inBag', 'ApiController@inBag')->name('Api.inBag');
 
 });
