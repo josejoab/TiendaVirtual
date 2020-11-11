@@ -71,7 +71,6 @@
                                 </form>
                             </div>      
                             <div class="pd-share">
-                                <div class="p-code">Sku : 00012</div>
                                 <div class="pd-social">
                                     <a><i class="ti-facebook"></i></a>
                                     <a><i class="ti-twitter-alt"></i></a>
@@ -91,7 +90,7 @@
                                 <a data-toggle="tab" href="#tab-2" role="tab">{{__('words.especificaciones')}} </a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#tab-3" role="tab"> {{__('words.comentarios')}}  (02) </a>
+                                <a data-toggle="tab" href="#tab-3" role="tab"> {{__('words.comentarios')}} </a>
                             </li>
                         </ul>
                     </div>
@@ -153,9 +152,15 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="p-catagory">Sku</td>
+                                            <td class="p-catagory"> {{__('words.Largo')}} </td>
                                             <td>
-                                                <div class="p-code">00012</div>
+                                                <div class="p-code">{{ $data["design"]->getLength() }}</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-catagory"> {{__('words.Categoria')}} </td>
+                                            <td>
+                                                <div class="p-code">{{ $data['category'][$data['design']->getCategoryId()] }}</div>
                                             </td>
                                         </tr>
                                     </table>
@@ -163,7 +168,7 @@
                             </div>
                             <div class="tab-pane fade" id="tab-3" role="tabpanel">
                                 <div class="customer-review-option">
-                                    <h4>2 {{__('words.Comentarios')}} </h4>
+                                    <h4> {{__('words.Comentarios')}} </h4>
                                     <div class="comment-option">
                                     </div>
                                     <div class="leave-comment">

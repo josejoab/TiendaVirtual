@@ -23,7 +23,12 @@
                 <input type="text" placeholder="{{__('words.Descripcion')}}" name="description" value="{{ old('description') }}" />
                 <input type="number" placeholder="{{__('words.Ancho')}}" name="width" value="{{ old('width') }}" />
                 <input type="number" placeholder="{{__('words.Largo')}}" name="length" value="{{ old('length') }}" />
-                <input type="text" placeholder="{{__('words.Categoria')}}" name="category_id" value="{{ old('category_id') }}" />
+                <label for="cars">{{__('words.Categoria')}}</label>
+                <select name="category_id">
+                @foreach ($data["categories"] as $cat)
+                  <option value="{{ $cat->getId() }}"> {{ $cat->getname() }} </option>
+                @endforeach
+                </select>
                 <input type="file" placeholder="{{__('words.Imagen')}}" name="image"/>
                 <input type="submit" value="{{__('words.Enviar')}}" />
             </form>
