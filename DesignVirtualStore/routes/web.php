@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/public', 'en');
+Route::redirect('/public', '/en');
 #Route::redirect('/', '/en');
 
 //language
