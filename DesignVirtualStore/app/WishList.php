@@ -12,7 +12,7 @@ use App\wishDesign;
 class WishList extends Model
 {
     //atributtes id, user_id
-    protected $fillable = [];
+    protected $fillable = ['user_id'];
 
     public function getId()
     {

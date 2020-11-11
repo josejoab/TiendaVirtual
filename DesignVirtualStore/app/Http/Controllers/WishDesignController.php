@@ -21,9 +21,12 @@ class WishDesignController extends Controller
     public function show()
     {
         $data = [];
-        $data["title"] = "Lista de deseos";
-        $wishDesigns = wishDesign::select('wishDesigns.id','designs.name','designs.price','designs.image','designs.category_id')
-            ->join('designs', 'designs.id', '=', 'wishdesigns.design_id')
+        $data["title"] = "WishList";
+        $wishDesigns = wishDesign::select('wish_designs.id','designs.name','designs.price','designs.image','designs.category_id')
+            ->join('designs', 'designs.id', '=', 'wish_designs.design_id')
+            ->join('wish_lists', 'wish_lists.id', '=', 'wish_designs.wishlist_id')
+            ->where('wish_lists.id' , Auth()->user()->id)
+            ->orderBy('id')
             ->get();
         $data["wishDesigns"] = $wishDesigns;
 

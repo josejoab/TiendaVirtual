@@ -16,10 +16,10 @@ class CreateWishDesignTable extends Migration
      */
     public function up()
     {
-        Schema::create('wishDesigns', function (Blueprint $table) {
+        Schema::create('wish_designs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('wishList_id')->unsigned();
-            $table->foreign('wishList_id')->references('id')->on('wishLists');
+            $table->foreign('wishList_id')->references('id')->on('wish_lists');
             $table->bigInteger('design_id')->unsigned();
             $table->foreign('design_id')->references('id')->on('designs');
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreateWishDesignTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishDesigns');
+        Schema::dropIfExists('wish_designs');
     }
 }

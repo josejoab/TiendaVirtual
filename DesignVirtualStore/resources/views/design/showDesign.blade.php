@@ -47,7 +47,7 @@
                         <div class="product-details">
                             <div class="pd-title">
                                 <h3> {{ $data["design"]->getName() }} </h3>
-                                <a href="{{ route('wishDesign.save',['wishList_id'=>'1', 'design_id'=>$data['design']->getId(), app()->getLocale()]) }}" class="heart-icon"><i class="icon_heart_alt"></i></a>
+                                <a href="{{ route('wishDesign.save',['wishList_id'=>$data['user'], 'design_id'=>$data['design']->getId(), app()->getLocale()]) }}" class="heart-icon"><i class="icon_heart_alt"></i></a>
                             </div>
                             <div class="pd-rating">
                                 <i class="fa fa-star"></i>

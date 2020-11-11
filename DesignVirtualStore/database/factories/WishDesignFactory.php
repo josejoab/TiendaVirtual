@@ -9,8 +9,9 @@ use App\WishDesign;
 use Faker\Generator as Faker;
 
 $factory->define(WishDesign::class, function (Faker $faker) {
+    static $wishList = 1;
     return [
-        'user_id'=>$faker->numberBetween($min = 1, $max = 3),
+        'wishList_id'=>$wishList++,
         'design_id'=>$faker->numberBetween($min = 1, $max = 10)
     ];
 });
