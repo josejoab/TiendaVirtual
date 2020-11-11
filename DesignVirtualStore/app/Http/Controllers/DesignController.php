@@ -26,8 +26,14 @@ class DesignController extends Controller
         $id = Auth()->user()->role_id;
         if($id==1)
         {
+            
             $data = []; //to be sent to the view
+            $categories = Category::all();
+
+
             $data["title"] = "Create Design";
+            $data["categories"] = $categories;
+            
 
             return view('design.create')->with("data",$data);
         }
@@ -68,14 +74,34 @@ class DesignController extends Controller
     }
 
 
-    public function show()  
+    public function show($language, $cat)  
     {
         $data = [];
+        $category = [];
         $categories = Category::all();
-        $designs =  Design::all();
+        $user = Auth()->user()->id;
+
+        if($cat == 'all')
+        {
+            $designs =  Design::all();
+        }
+        else
+        {
+            $designs = Design::select('designs.id','designs.name','designs.price','designs.description','designs.image','designs.width','designs.length','designs.category_id')
+            ->join('categories', 'categories.id', '=', 'designs.category_id')
+            ->where('categories.name' , $cat)
+            ->get();
+        }
+
+        foreach ($categories as $cat ){
+            $category[$cat->getId()] = $cat->getName();
+        }
+
         $data["title"] = "Designs";
         $data["categories"] = $categories;
         $data["designs"] = $designs;
+        $data["user"] = $user;
+        $data["category"]  = $category;
 
         return view('design.show')->with("data",$data);
     }
@@ -86,12 +112,19 @@ class DesignController extends Controller
         try
         {
             $data = [];
+            $category = [];
             $categories = Category::all();
             $designs =  Design::all();
             $design = Design::findOrFail($id);
             $user = Auth()->user()->id;
+
+            foreach ($categories as $cat ){
+                $category[$cat->getId()] = $cat->getName();
+            }
+
             $data["title"] = "Design ".$design->getName();
             $data["categories"] = $categories;
+            $data["category"]  = $category;
             $data["designs"] = $designs;
             $data["design"] = $design;
             $data["user"] = $user;

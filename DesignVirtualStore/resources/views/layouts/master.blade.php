@@ -113,7 +113,7 @@
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="active"><a href="{{route('index', app()->getLocale())}}">{{__('words.Inicio')}}</a></li>
-                        <li><a href="{{route('design.show',app()->getLocale() )}}">{{__('words.Tienda')}}</a></li>
+                        <li><a href="{{route('design.show', ['cat' => 'all', app()->getLocale()] )}}">{{__('words.Tienda')}}</a></li>
                         <li><a href="{{route('Api.inBag',app()->getLocale() )}}">{{__('Api')}}</a></li>
                         @guest
                         @else

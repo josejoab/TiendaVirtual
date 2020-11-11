@@ -42,7 +42,7 @@ class CartController extends Controller
         $Tprice['TotalPrice'] = $Tprice['TotalPrice'] + $price[$id];
         $request->session()->put('totalPrice',$Tprice);
 
-        return redirect()->route('design.show', ['language'=> $language]);
+        return redirect()->route('design.show', ['language'=> $language, 'cat' => 'all']);
     }
 
     public function removeCart($language, Request $request)
@@ -52,7 +52,7 @@ class CartController extends Controller
         $Tprice['TotalPrice'] = 0;
         $request->session()->put('totalPrice', $Tprice);
         $request->session()->forget('subPrice');
-        return redirect()->route('design.show', ['language'=> $language]);
+        return redirect()->route('design.show', ['language'=> $language, 'cat' => 'all']);
     }
 
     public function cart($language, Request $request)
@@ -67,7 +67,7 @@ class CartController extends Controller
             return view('cart.cart2')->with("data",$data);
         }
 
-        return redirect()->route('design.show', ['language'=> $language]);
+        return redirect()->route('design.show', ['language'=> $language, 'cat' => 'all']);
     }
 
     public function buy($language, Request $request)
@@ -99,6 +99,7 @@ class CartController extends Controller
             $order->save();
 
             //$request->session()->forget('pdfData');
+            $precioTotal = $Tprice['TotalPrice'];
             $Tprice['TotalPrice'] = 0;
             $request->session()->put('totalPrice', $Tprice);
             $request->session()->forget('designs');

@@ -8,7 +8,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb-text product-more">
                         <a href="{route('home', app()->getLocale())}"><i class="fa fa-home"></i> {{__('words.Inicio')}}</a>
-                        <a href="{route('design.show', app()->getLocale())}">{{__('words.Diseños')}}</a>
+                        <a href="{route('design.show',['cat'=>'all', app()->getLocale()])}">{{__('words.Diseños')}}</a>
                         <span>{{__('words.CarritodeCompras')}}</span>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="cart-buttons">
-                                <a href="{{route('design.show', app()->getLocale())}}" class="primary-btn continue-shop">{{__('words.ContinuarComprando')}}</a>
+                                <a href="{{route('design.show',['cat' => 'all', app()->getLocale()])}}" class="primary-btn continue-shop">{{__('words.ContinuarComprando')}}</a>
                                 <a href="{{route('cart.cart', app()->getLocale())}}" class="primary-btn up-cart">{{__('words.ActualizarCarrito')}}</a>
                             </div>
                             <div class="discount-coupon">

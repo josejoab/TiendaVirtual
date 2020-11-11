@@ -12,7 +12,7 @@
                     <li>{{__('words.Nombre')}}: {{ $product->getName() }} - {{__('words.Cantidad')}}: {{ Session::get('designs')[$product->getId()] }}</li>
                 @endforeach
                 <br /><br />
-                {{__('words.Total')}}: precio_total
+                {{__('words.Total')}}:
                 <form action="{{ route('cart.buy', app()->getLocale()) }}" method="POST">
                 @csrf
                 <button type="submit">{{__('words.Comprar')}}</button>

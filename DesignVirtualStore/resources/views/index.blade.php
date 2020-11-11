@@ -15,12 +15,12 @@
                         <div class="col-lg-5">
                             <span>{{__('words.TechosPVC')}}</span>
                             <h1>{{__('words.Promo')}}</h1>
-                            <p>{{__('words.Lamejorcalidadparatucasa')}}</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                            <h4 style="color: black">{{__('words.Lamejorcalidadparatucasa')}}</h4>
+                            <a href="#" class="primary-btn">{{__('words.ComprarAhora')}}</a>
                         </div>
                     </div>
                     <div class="off-card">
-                        <h2>Promo <span>10%</span></h2>
+                        <h2> {{__('words.Promo')}} <span> 10% </span></h2>
                     </div>
                 </div>
             </div>
@@ -28,14 +28,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <span>Paredes PVC</span>
-                            <h1>Precios Bajos</h1>
-                            <p>Diseño para tu hogar</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                            <span>{{__('words.ParedesPVC')}}</span>
+                            <h1>{{__('words.PreciosBajos')}}</h1>
+                            <h4 style="color: black; size=11" >{{__('words.DiseñoHogar')}}</h4>
+                            <a href="#" class="primary-btn"> {{__('words.ComprarAhora')}} </a>
                         </div>
                     </div>
                     <div class="off-card">
-                        <h2>Promo <span>50%</span></h2>
+                        <h2> {{__('words.Promo')}} <span>50%</span></h2>
                     </div>
                 </div>
             </div>
