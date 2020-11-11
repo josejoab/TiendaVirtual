@@ -82,16 +82,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-
-        
         $wishlist = WishList::create([
             'user_id' => $user->id,
-        ]);
-        
-
-        $Tprice = $request->session()->get("totalPrice");
-        $Tprice['TotalPrice'] = 0;
-        $request->session()->put('totalPrice', $Tprice);
+        ]);      
         
         return $user;
     }
