@@ -70,7 +70,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(Request $request, array $data)
+    protected function create(array $data)
     {
         $user = User::create([
             'name' => $data['name'],
@@ -81,9 +81,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $Tprice = $request->session()->get("totalPrice");
-        $Tprice['TotalPrice'] = 0;
-        $request->session()->put('totalPrice', $Tprice);
+
         
         return $user;
     }

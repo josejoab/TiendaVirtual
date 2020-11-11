@@ -14,8 +14,11 @@ class UserController extends Controller
         $this->middleware('role:user');
     } */
 
-    public function index()
+    public function index(Request $request)
     {
+        $Tprice = $request->session()->get("totalPrice");
+        $Tprice['TotalPrice'] = 0;
+        $request->session()->put('totalPrice', $Tprice);
         return view('user.index');
     }
 }
